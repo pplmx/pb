@@ -5,6 +5,8 @@ package blog.v1;
 import "buf/validate/validate.proto";
 import "google/api/annotations.proto";
 
+option go_package = "github.com/pplmx/pb/blog/v1;blogv1";
+
 service PostService {
   rpc CreatePost(CreatePostRequest) returns (CreatePostResponse) {
     option (google.api.http) = {

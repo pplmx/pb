@@ -1,8 +1,12 @@
-.PHONY: help pb fmt lint gen up
+.PHONY: help pb up fmt lint gen
 .DEFAULT_GOAL := help
 
-# buf: buf-up buf-lint buf-fmt buf-gen
-pb: up lint fmt gen
+# buf: buf-up buf-fmt buf-lint buf-gen
+pb: up fmt lint gen
+
+# buf update
+up:
+	@cd proto; buf mod update
 
 # buf format
 fmt:
@@ -15,10 +19,6 @@ lint:
 # buf generate
 gen:
 	@buf generate
-
-# buf update
-up:
-	@cd proto; buf mod update
 
 # Show help
 help:
