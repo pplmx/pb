@@ -7,10 +7,16 @@ managed:
             - buf.build/googleapis/googleapis
             - buf.build/bufbuild/protovalidate
 plugins:
-    -   plugin: buf.build/grpc/go
+    #    -   plugin: buf.build/grpc/python:v1.62.0
+    #        out: .
+    #    -   plugin: buf.build/protocolbuffers/pyi:v25.3
+    #        out: .
+    #    -   plugin: buf.build/protocolbuffers/python:v25.3
+    #        out: .
+    -   plugin: buf.build/grpc/go:v1.3.0
         out: .
         opt: paths=source_relative
-    -   plugin: buf.build/protocolbuffers/go
+    -   plugin: buf.build/protocolbuffers/go:v1.32.0
         out: .
         opt: paths=source_relative
     -   plugin: buf.build/community/google-gnostic-openapi:v0.7.0
