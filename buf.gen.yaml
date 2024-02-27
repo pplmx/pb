@@ -7,18 +7,38 @@ managed:
             - buf.build/googleapis/googleapis
             - buf.build/bufbuild/protovalidate
 plugins:
-    #    -   plugin: buf.build/grpc/python:v1.62.0
-    #        out: .
-    #    -   plugin: buf.build/protocolbuffers/pyi:v25.3
-    #        out: .
-    #    -   plugin: buf.build/protocolbuffers/python:v25.3
-    #        out: .
-    -   plugin: buf.build/grpc/go:v1.3.0
-        out: .
-        opt: paths=source_relative
-    -   plugin: buf.build/protocolbuffers/go:v1.32.0
-        out: .
-        opt: paths=source_relative
+    #   generate openapi docs
     -   plugin: buf.build/community/google-gnostic-openapi:v0.7.0
         out: docs
         opt: paths=source_relative
+    #   generate go code
+    -   plugin: buf.build/protocolbuffers/go:v1.32.0
+        out: .
+        opt: paths=source_relative
+    -   plugin: buf.build/grpc/go:v1.3.0
+        out: .
+        opt: paths=source_relative
+#    #   generate rust code
+#    -   plugin: buf.build/community/neoeinstein-prost:v0.3.1
+#        out: rs
+#    -   plugin: buf.build/community/neoeinstein-prost-serde:v0.3.0
+#        out: rs
+#    -   plugin: buf.build/community/neoeinstein-tonic:v0.4.0
+#        out: rs
+#    #   generate python code
+#    -   plugin: buf.build/protocolbuffers/python:v25.3
+#        out: py
+#    -   plugin: buf.build/protocolbuffers/pyi:v25.3
+#        out: py
+#    -   plugin: buf.build/grpc/python:v1.62.0
+#        out: py
+#    #   generate java code
+#    -   plugin: buf.build/protocolbuffers/java:v25.3
+#        out: java
+#    -   plugin: buf.build/grpc/java:v1.61.1
+#        out: java
+#    #   generate js code
+#    -   plugin: buf.build/bufbuild/es:v1.7.2
+#        out: es
+#    -   plugin: buf.build/connectrpc/es:v1.3.0
+#        out: es
