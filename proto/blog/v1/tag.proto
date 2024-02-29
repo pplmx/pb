@@ -47,7 +47,7 @@ message CreateTagResponse {
 }
 
 message GetTagRequest {
-  uint32 id = 1;
+  uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
 }
 
 message GetTagResponse {
@@ -67,14 +67,14 @@ message ListTagsResponse {
 }
 
 message UpdateTagRequest {
-  uint32 id = 1;
+  uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
   string name = 2;
 }
 
 message UpdateTagResponse {}
 
 message DeleteTagRequest {
-  uint32 id = 1;
+  uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
 }
 
 message DeleteTagResponse {}

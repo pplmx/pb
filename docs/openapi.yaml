@@ -136,12 +136,12 @@ paths:
                   in: query
                   schema:
                     type: integer
-                    format: int32
+                    format: uint32
                 - name: limit
                   in: query
                   schema:
                     type: integer
-                    format: int32
+                    format: uint32
             responses:
                 "200":
                     description: OK

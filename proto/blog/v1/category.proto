@@ -47,7 +47,7 @@ message CreateCategoryResponse {
 }
 
 message GetCategoryRequest {
-  uint32 id = 1;
+  uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
 }
 
 message GetCategoryResponse {
@@ -56,8 +56,8 @@ message GetCategoryResponse {
 }
 
 message ListCategoryRequest {
-  int32 page = 1;
-  int32 limit = 2;
+  uint32 page = 1 [(buf.validate.field).uint32.gt = 0];
+  uint32 limit = 2 [(buf.validate.field).uint32.gt = 0];
 }
 
 message ListCategoryResponse {
@@ -70,7 +70,7 @@ message ListCategoryResponse {
 }
 
 message UpdateCategoryRequest {
-  uint32 id = 1;
+  uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
   string name = 2;
 }
 
@@ -79,7 +79,7 @@ message UpdateCategoryResponse {
 }
 
 message DeleteCategoryRequest {
-  uint32 id = 1;
+  uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
 }
 
 message DeleteCategoryResponse {
