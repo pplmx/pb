@@ -7,20 +7,36 @@ managed:
             - buf.build/googleapis/googleapis
             - buf.build/bufbuild/protovalidate
 plugins:
+    #   1. Load the plugin from the local path
+    #      You can install a plugin whose name must like as "protoc-gen-NAME" by `go install`
+    #      Then you can use the plugin by `plugin: NAME`
+    #      For example, if you have installed the plugin `protoc-gen-go` by `go install google.golang.org/protobuf/cmd/protoc-gen-go`
+    #      Then you can use the plugin by `plugin: go`
+    #
+    #   2. Load the plugin from buf.build registry
+    #      You can find your needed plugin from https://buf.build/plugins
+    #
     #   generate openapi docs
-    -   plugin: buf.build/community/google-gnostic-openapi:v0.7.0
+    -   plugin: openapi
         out: docs
         opt: paths=source_relative
     #   generate go code
-    -   plugin: buf.build/protocolbuffers/go:v1.32.0
+    -   plugin: go
         out: .
         opt: paths=source_relative
-    -   plugin: buf.build/grpc-ecosystem/gateway:v2.19.1
+    -   plugin: go-grpc
         out: .
         opt: paths=source_relative
-    -   plugin: buf.build/grpc/go:v1.3.0
+    #   generate kratos rest api code
+    -   name: go-http
         out: .
-        opt: paths=source_relative
+        opt:
+            - paths=source_relative
+    #   generate kratos errors code
+    -   name: go-errors
+        out: .
+        opt:
+            - paths=source_relative
 #    #   generate rust code
 #    -   plugin: buf.build/community/neoeinstein-prost:v0.3.1
 #        out: rs
