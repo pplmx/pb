@@ -1,58 +1,24 @@
-version: v1
+version: v2
 managed:
-    enabled: true
-    go_package_prefix:
-        default: github.com/pplmx/pb
-        except:
-            - buf.build/googleapis/googleapis
-            - buf.build/bufbuild/protovalidate
+  enabled: true
+  disable:
+    - file_option: go_package
+      module: buf.build/googleapis/googleapis
+    - file_option: go_package
+      module: buf.build/bufbuild/protovalidate
+  override:
+    - file_option: go_package_prefix
+      value: github.com/pplmx/pb
 plugins:
-    #   1. Load the plugin from the local path
-    #      You can install a plugin whose name must like as "protoc-gen-NAME" by `go install`
-    #      Then you can use the plugin by `plugin: NAME`
-    #      For example, if you have installed the plugin `protoc-gen-go` by `go install google.golang.org/protobuf/cmd/protoc-gen-go`
-    #      Then you can use the plugin by `plugin: go`
-    #
-    #   2. Load the plugin from buf.build registry
-    #      You can find your needed plugin from https://buf.build/plugins
-    #
-    #   generate openapi docs
-    -   plugin: openapi
-        out: docs
-        opt: paths=source_relative
-    #   generate go code
-    -   plugin: go
-        out: .
-        opt: paths=source_relative
-    -   plugin: go-grpc
-        out: .
-        opt: paths=source_relative
-    #   generate kratos rest api code
-    -   name: go-http
-        out: .
-        opt:
-            - paths=source_relative
-#    #   generate rust code
-#    -   plugin: buf.build/community/neoeinstein-prost:v0.3.1
-#        out: rs
-#    -   plugin: buf.build/community/neoeinstein-prost-serde:v0.3.0
-#        out: rs
-#    -   plugin: buf.build/community/neoeinstein-tonic:v0.4.0
-#        out: rs
-#    #   generate python code
-#    -   plugin: buf.build/protocolbuffers/python:v25.3
-#        out: py
-#    -   plugin: buf.build/protocolbuffers/pyi:v25.3
-#        out: py
-#    -   plugin: buf.build/grpc/python:v1.62.0
-#        out: py
-#    #   generate java code
-#    -   plugin: buf.build/protocolbuffers/java:v25.3
-#        out: java
-#    -   plugin: buf.build/grpc/java:v1.61.1
-#        out: java
-#    #   generate js code
-#    -   plugin: buf.build/bufbuild/es:v1.7.2
-#        out: es
-#    -   plugin: buf.build/connectrpc/es:v1.3.0
-#        out: es
+  - local: protoc-gen-openapi
+    out: docs
+    opt: paths=source_relative
+  - local: protoc-gen-go
+    out: .
+    opt: paths=source_relative
+  - local: protoc-gen-go-grpc
+    out: .
+    opt: paths=source_relative
+  - local: protoc-gen-go-http
+    out: .
+    opt: paths=source_relative
