@@ -30,10 +30,15 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PostServiceClient interface {
+	// 创建博客文章
 	CreatePost(ctx context.Context, in *CreatePostRequest, opts ...grpc.CallOption) (*CreatePostResponse, error)
+	// 根据ID获取博客文章
 	GetPostByID(ctx context.Context, in *GetPostByIDRequest, opts ...grpc.CallOption) (*GetPostByIDResponse, error)
+	// 列出所有博客文章
 	ListPosts(ctx context.Context, in *ListPostsRequest, opts ...grpc.CallOption) (*ListPostsResponse, error)
+	// 更新博客文章
 	UpdatePost(ctx context.Context, in *UpdatePostRequest, opts ...grpc.CallOption) (*UpdatePostResponse, error)
+	// 删除博客文章
 	DeletePost(ctx context.Context, in *DeletePostRequest, opts ...grpc.CallOption) (*DeletePostResponse, error)
 }
 
@@ -99,10 +104,15 @@ func (c *postServiceClient) DeletePost(ctx context.Context, in *DeletePostReques
 // All implementations must embed UnimplementedPostServiceServer
 // for forward compatibility.
 type PostServiceServer interface {
+	// 创建博客文章
 	CreatePost(context.Context, *CreatePostRequest) (*CreatePostResponse, error)
+	// 根据ID获取博客文章
 	GetPostByID(context.Context, *GetPostByIDRequest) (*GetPostByIDResponse, error)
+	// 列出所有博客文章
 	ListPosts(context.Context, *ListPostsRequest) (*ListPostsResponse, error)
+	// 更新博客文章
 	UpdatePost(context.Context, *UpdatePostRequest) (*UpdatePostResponse, error)
+	// 删除博客文章
 	DeletePost(context.Context, *DeletePostRequest) (*DeletePostResponse, error)
 	mustEmbedUnimplementedPostServiceServer()
 }

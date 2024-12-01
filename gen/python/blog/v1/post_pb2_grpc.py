@@ -45,31 +45,36 @@ class PostServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def CreatePost(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """创建博客文章
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPostByID(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """根据ID获取博客文章
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListPosts(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """列出所有博客文章
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdatePost(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """更新博客文章
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeletePost(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """删除博客文章
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

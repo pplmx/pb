@@ -26,41 +26,19 @@ namespace _fl = ::google::protobuf::internal::field_layout;
 namespace blog {
 namespace v1 {
 
-inline constexpr UpdatePostResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : id_{0u},
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR UpdatePostResponse::UpdatePostResponse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct UpdatePostResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdatePostResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UpdatePostResponseDefaultTypeInternal() {}
-  union {
-    UpdatePostResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePostResponseDefaultTypeInternal _UpdatePostResponse_default_instance_;
-
 inline constexpr UpdatePostRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : title_(
+      : _cached_size_{0},
+        title_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         content_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        id_{0u},
-        _cached_size_{0} {}
+        category_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        id_{0u} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR UpdatePostRequest::UpdatePostRequest(::_pbi::ConstantInitialized)
@@ -82,19 +60,20 @@ struct UpdatePostRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePostRequestDefaultTypeInternal _UpdatePostRequest_default_instance_;
 
-inline constexpr ListPostsResponse_Post::Impl_::Impl_(
+inline constexpr ListPostsRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : title_(
+      : _cached_size_{0},
+        author_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        content_(
+        category_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        id_{0u},
-        _cached_size_{0} {}
+        page_{0u},
+        page_size_{0u} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR ListPostsResponse_Post::ListPostsResponse_Post(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR ListPostsRequest::ListPostsRequest(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -102,24 +81,6 @@ PROTOBUF_CONSTEXPR ListPostsResponse_Post::ListPostsResponse_Post(::_pbi::Consta
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct ListPostsResponse_PostDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ListPostsResponse_PostDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ListPostsResponse_PostDefaultTypeInternal() {}
-  union {
-    ListPostsResponse_Post _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListPostsResponse_PostDefaultTypeInternal _ListPostsResponse_Post_default_instance_;
-              template <typename>
-PROTOBUF_CONSTEXPR ListPostsRequest::ListPostsRequest(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::internal::ZeroFieldsBase(_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::internal::ZeroFieldsBase() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
 struct ListPostsRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ListPostsRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListPostsRequestDefaultTypeInternal() {}
@@ -130,37 +91,6 @@ struct ListPostsRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListPostsRequestDefaultTypeInternal _ListPostsRequest_default_instance_;
-
-inline constexpr GetPostByIDResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : title_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        content_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        id_{0u},
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR GetPostByIDResponse::GetPostByIDResponse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct GetPostByIDResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPostByIDResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetPostByIDResponseDefaultTypeInternal() {}
-  union {
-    GetPostByIDResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPostByIDResponseDefaultTypeInternal _GetPostByIDResponse_default_instance_;
 
 inline constexpr GetPostByIDRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -190,6 +120,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 inline constexpr DeletePostResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : id_{0u},
+        success_{false},
         _cached_size_{0} {}
 
 template <typename>
@@ -237,40 +168,21 @@ struct DeletePostRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeletePostRequestDefaultTypeInternal _DeletePostRequest_default_instance_;
 
-inline constexpr CreatePostResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : id_{0u},
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR CreatePostResponse::CreatePostResponse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct CreatePostResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreatePostResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreatePostResponseDefaultTypeInternal() {}
-  union {
-    CreatePostResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreatePostResponseDefaultTypeInternal _CreatePostResponse_default_instance_;
-
 inline constexpr CreatePostRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : title_(
+      : _cached_size_{0},
+        title_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         content_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        _cached_size_{0} {}
+        author_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        category_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
 
 template <typename>
 PROTOBUF_CONSTEXPR CreatePostRequest::CreatePostRequest(::_pbi::ConstantInitialized)
@@ -292,9 +204,139 @@ struct CreatePostRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreatePostRequestDefaultTypeInternal _CreatePostRequest_default_instance_;
 
+inline constexpr UpdatePostResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        updated_at_{nullptr},
+        id_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR UpdatePostResponse::UpdatePostResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct UpdatePostResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UpdatePostResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UpdatePostResponseDefaultTypeInternal() {}
+  union {
+    UpdatePostResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePostResponseDefaultTypeInternal _UpdatePostResponse_default_instance_;
+
+inline constexpr ListPostsResponse_Post::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        title_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        content_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        author_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        category_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        created_at_{nullptr},
+        id_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ListPostsResponse_Post::ListPostsResponse_Post(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ListPostsResponse_PostDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ListPostsResponse_PostDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ListPostsResponse_PostDefaultTypeInternal() {}
+  union {
+    ListPostsResponse_Post _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListPostsResponse_PostDefaultTypeInternal _ListPostsResponse_Post_default_instance_;
+
+inline constexpr GetPostByIDResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        title_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        content_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        author_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        category_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        created_at_{nullptr},
+        updated_at_{nullptr},
+        id_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR GetPostByIDResponse::GetPostByIDResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct GetPostByIDResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetPostByIDResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetPostByIDResponseDefaultTypeInternal() {}
+  union {
+    GetPostByIDResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPostByIDResponseDefaultTypeInternal _GetPostByIDResponse_default_instance_;
+
+inline constexpr CreatePostResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        created_at_{nullptr},
+        id_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR CreatePostResponse::CreatePostResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct CreatePostResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CreatePostResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CreatePostResponseDefaultTypeInternal() {}
+  union {
+    CreatePostResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreatePostResponseDefaultTypeInternal _CreatePostResponse_default_instance_;
+
 inline constexpr ListPostsResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : posts_{},
+        total_count_{0u},
         _cached_size_{0} {}
 
 template <typename>
@@ -325,7 +367,7 @@ static constexpr const ::_pb::ServiceDescriptor**
 const ::uint32_t
     TableStruct_blog_2fv1_2fpost_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
         protodesc_cold) = {
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostRequest, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostRequest, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -335,7 +377,13 @@ const ::uint32_t
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostRequest, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostRequest, _impl_.content_),
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostRequest, _impl_.author_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostRequest, _impl_.category_),
+        ~0u,
+        ~0u,
+        0,
+        1,
+        PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostResponse, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostResponse, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -344,6 +392,9 @@ const ::uint32_t
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostResponse, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::CreatePostResponse, _impl_.created_at_),
+        ~0u,
+        0,
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDRequest, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -353,7 +404,7 @@ const ::uint32_t
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDRequest, _impl_.id_),
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -364,7 +415,18 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.content_),
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.author_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.category_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.created_at_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::GetPostByIDResponse, _impl_.updated_at_),
+        ~0u,
+        ~0u,
+        ~0u,
+        0,
+        1,
+        2,
+        3,
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsRequest, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsRequest, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -372,7 +434,15 @@ const ::uint32_t
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsRequest, _impl_.author_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsRequest, _impl_.category_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsRequest, _impl_.page_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsRequest, _impl_.page_size_),
+        0,
+        1,
+        ~0u,
+        ~0u,
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -383,6 +453,15 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_.content_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_.author_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_.category_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse_Post, _impl_.created_at_),
+        ~0u,
+        ~0u,
+        ~0u,
+        0,
+        1,
+        2,
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -392,7 +471,8 @@ const ::uint32_t
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse, _impl_.posts_),
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::ListPostsResponse, _impl_.total_count_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostRequest, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostRequest, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -403,7 +483,12 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostRequest, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostRequest, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostRequest, _impl_.content_),
-        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostRequest, _impl_.category_),
+        ~0u,
+        0,
+        1,
+        2,
+        PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostResponse, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostResponse, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -412,6 +497,9 @@ const ::uint32_t
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostResponse, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::UpdatePostResponse, _impl_.updated_at_),
+        ~0u,
+        0,
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::blog::v1::DeletePostRequest, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -430,21 +518,22 @@ const ::uint32_t
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::blog::v1::DeletePostResponse, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::blog::v1::DeletePostResponse, _impl_.success_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::blog::v1::CreatePostRequest)},
-        {10, -1, -1, sizeof(::blog::v1::CreatePostResponse)},
-        {19, -1, -1, sizeof(::blog::v1::GetPostByIDRequest)},
-        {28, -1, -1, sizeof(::blog::v1::GetPostByIDResponse)},
-        {39, -1, -1, sizeof(::blog::v1::ListPostsRequest)},
-        {47, -1, -1, sizeof(::blog::v1::ListPostsResponse_Post)},
-        {58, -1, -1, sizeof(::blog::v1::ListPostsResponse)},
-        {67, -1, -1, sizeof(::blog::v1::UpdatePostRequest)},
-        {78, -1, -1, sizeof(::blog::v1::UpdatePostResponse)},
-        {87, -1, -1, sizeof(::blog::v1::DeletePostRequest)},
-        {96, -1, -1, sizeof(::blog::v1::DeletePostResponse)},
+        {0, 12, -1, sizeof(::blog::v1::CreatePostRequest)},
+        {16, 26, -1, sizeof(::blog::v1::CreatePostResponse)},
+        {28, -1, -1, sizeof(::blog::v1::GetPostByIDRequest)},
+        {37, 52, -1, sizeof(::blog::v1::GetPostByIDResponse)},
+        {59, 71, -1, sizeof(::blog::v1::ListPostsRequest)},
+        {75, 89, -1, sizeof(::blog::v1::ListPostsResponse_Post)},
+        {95, -1, -1, sizeof(::blog::v1::ListPostsResponse)},
+        {105, 117, -1, sizeof(::blog::v1::UpdatePostRequest)},
+        {121, 131, -1, sizeof(::blog::v1::UpdatePostResponse)},
+        {133, -1, -1, sizeof(::blog::v1::DeletePostRequest)},
+        {142, -1, -1, sizeof(::blog::v1::DeletePostResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::blog::v1::_CreatePostRequest_default_instance_._instance,
@@ -463,55 +552,79 @@ const char descriptor_table_protodef_blog_2fv1_2fpost_2eproto[] ABSL_ATTRIBUTE_S
     protodesc_cold) = {
     "\n\022blog/v1/post.proto\022\007blog.v1\032\033buf/valid"
     "ate/validate.proto\032\034google/api/annotatio"
-    "ns.proto\"U\n\021CreatePostRequest\022\035\n\005title\030\001"
-    " \001(\tB\007\272H\004r\002\020\001R\005title\022!\n\007content\030\002 \001(\tB\007\272"
-    "H\004r\002\020\001R\007content\"$\n\022CreatePostResponse\022\016\n"
-    "\002id\030\001 \001(\rR\002id\"-\n\022GetPostByIDRequest\022\027\n\002i"
-    "d\030\001 \001(\rB\007\272H\004*\002 \000R\002id\"U\n\023GetPostByIDRespo"
-    "nse\022\016\n\002id\030\001 \001(\rR\002id\022\024\n\005title\030\002 \001(\tR\005titl"
-    "e\022\030\n\007content\030\003 \001(\tR\007content\"\022\n\020ListPosts"
-    "Request\"\222\001\n\021ListPostsResponse\0225\n\005posts\030\001"
-    " \003(\0132\037.blog.v1.ListPostsResponse.PostR\005p"
-    "osts\032F\n\004Post\022\016\n\002id\030\001 \001(\rR\002id\022\024\n\005title\030\002 "
-    "\001(\tR\005title\022\030\n\007content\030\003 \001(\tR\007content\"\\\n\021"
-    "UpdatePostRequest\022\027\n\002id\030\001 \001(\rB\007\272H\004*\002 \000R\002"
-    "id\022\024\n\005title\030\002 \001(\tR\005title\022\030\n\007content\030\003 \001("
-    "\tR\007content\"$\n\022UpdatePostResponse\022\016\n\002id\030\001"
-    " \001(\rR\002id\",\n\021DeletePostRequest\022\027\n\002id\030\001 \001("
-    "\rB\007\272H\004*\002 \000R\002id\"$\n\022DeletePostResponse\022\016\n\002"
-    "id\030\001 \001(\rR\002id2\370\003\n\013PostService\022_\n\nCreatePo"
-    "st\022\032.blog.v1.CreatePostRequest\032\033.blog.v1"
-    ".CreatePostResponse\"\030\202\323\344\223\002\022\"\r/api/v1/pos"
-    "ts:\001*\022d\n\013GetPostByID\022\033.blog.v1.GetPostBy"
-    "IDRequest\032\034.blog.v1.GetPostByIDResponse\""
-    "\032\202\323\344\223\002\024\022\022/api/v1/posts/{id}\022Y\n\tListPosts"
-    "\022\031.blog.v1.ListPostsRequest\032\032.blog.v1.Li"
-    "stPostsResponse\"\025\202\323\344\223\002\017\022\r/api/v1/posts\022d"
-    "\n\nUpdatePost\022\032.blog.v1.UpdatePostRequest"
-    "\032\033.blog.v1.UpdatePostResponse\"\035\202\323\344\223\002\027\032\022/"
-    "api/v1/posts/{id}:\001*\022a\n\nDeletePost\022\032.blo"
-    "g.v1.DeletePostRequest\032\033.blog.v1.DeleteP"
-    "ostResponse\"\032\202\323\344\223\002\024*\022/api/v1/posts/{id}B"
-    "y\n\013com.blog.v1B\tPostProtoP\001Z\"github.com/"
-    "pplmx/pb/blog/v1;blogv1\242\002\003BXX\252\002\007Blog.V1\312"
-    "\002\007Blog\\V1\342\002\023Blog\\V1\\GPBMetadata\352\002\010Blog::"
-    "V1b\006proto3"
+    "ns.proto\032\037google/protobuf/timestamp.prot"
+    "o\"\260\001\n\021CreatePostRequest\022\037\n\005title\030\001 \001(\tB\t"
+    "\272H\006r\004\020\001\030dR\005title\022$\n\007content\030\002 \001(\tB\n\272H\007r\005"
+    "\020\001\030\220NR\007content\022\033\n\006author\030\003 \001(\tH\000R\006author"
+    "\210\001\001\022\037\n\010category\030\004 \001(\tH\001R\010category\210\001\001B\t\n\007"
+    "_authorB\013\n\t_category\"_\n\022CreatePostRespon"
+    "se\022\016\n\002id\030\001 \001(\rR\002id\0229\n\ncreated_at\030\002 \001(\0132\032"
+    ".google.protobuf.TimestampR\tcreatedAt\"-\n"
+    "\022GetPostByIDRequest\022\027\n\002id\030\001 \001(\rB\007\272H\004*\002 \000"
+    "R\002id\"\241\002\n\023GetPostByIDResponse\022\016\n\002id\030\001 \001(\r"
+    "R\002id\022\024\n\005title\030\002 \001(\tR\005title\022\030\n\007content\030\003 "
+    "\001(\tR\007content\022\033\n\006author\030\004 \001(\tH\000R\006author\210\001"
+    "\001\022\037\n\010category\030\005 \001(\tH\001R\010category\210\001\001\0229\n\ncr"
+    "eated_at\030\006 \001(\0132\032.google.protobuf.Timesta"
+    "mpR\tcreatedAt\0229\n\nupdated_at\030\007 \001(\0132\032.goog"
+    "le.protobuf.TimestampR\tupdatedAtB\t\n\007_aut"
+    "horB\013\n\t_category\"\255\001\n\020ListPostsRequest\022\033\n"
+    "\006author\030\001 \001(\tH\000R\006author\210\001\001\022\037\n\010category\030\002"
+    " \001(\tH\001R\010category\210\001\001\022\033\n\004page\030\003 \001(\rB\007\272H\004*\002"
+    "(\001R\004page\022&\n\tpage_size\030\004 \001(\rB\t\272H\006*\004\030d(\001R\010"
+    "pageSizeB\t\n\007_authorB\013\n\t_category\"\305\002\n\021Lis"
+    "tPostsResponse\0225\n\005posts\030\001 \003(\0132\037.blog.v1."
+    "ListPostsResponse.PostR\005posts\022\037\n\013total_c"
+    "ount\030\002 \001(\rR\ntotalCount\032\327\001\n\004Post\022\016\n\002id\030\001 "
+    "\001(\rR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\030\n\007content"
+    "\030\003 \001(\tR\007content\022\033\n\006author\030\004 \001(\tH\000R\006autho"
+    "r\210\001\001\022\037\n\010category\030\005 \001(\tH\001R\010category\210\001\001\0229\n"
+    "\ncreated_at\030\006 \001(\0132\032.google.protobuf.Time"
+    "stampR\tcreatedAtB\t\n\007_authorB\013\n\t_category"
+    "\"\301\001\n\021UpdatePostRequest\022\027\n\002id\030\001 \001(\rB\007\272H\004*"
+    "\002 \000R\002id\022$\n\005title\030\002 \001(\tB\t\272H\006r\004\020\001\030dH\000R\005tit"
+    "le\210\001\001\022)\n\007content\030\003 \001(\tB\n\272H\007r\005\020\001\030\220NH\001R\007co"
+    "ntent\210\001\001\022\037\n\010category\030\004 \001(\tH\002R\010category\210\001"
+    "\001B\010\n\006_titleB\n\n\010_contentB\013\n\t_category\"_\n\022"
+    "UpdatePostResponse\022\016\n\002id\030\001 \001(\rR\002id\0229\n\nup"
+    "dated_at\030\002 \001(\0132\032.google.protobuf.Timesta"
+    "mpR\tupdatedAt\",\n\021DeletePostRequest\022\027\n\002id"
+    "\030\001 \001(\rB\007\272H\004*\002 \000R\002id\">\n\022DeletePostRespons"
+    "e\022\016\n\002id\030\001 \001(\rR\002id\022\030\n\007success\030\002 \001(\010R\007succ"
+    "ess2\370\003\n\013PostService\022_\n\nCreatePost\022\032.blog"
+    ".v1.CreatePostRequest\032\033.blog.v1.CreatePo"
+    "stResponse\"\030\202\323\344\223\002\022\"\r/api/v1/posts:\001*\022d\n\013"
+    "GetPostByID\022\033.blog.v1.GetPostByIDRequest"
+    "\032\034.blog.v1.GetPostByIDResponse\"\032\202\323\344\223\002\024\022\022"
+    "/api/v1/posts/{id}\022Y\n\tListPosts\022\031.blog.v"
+    "1.ListPostsRequest\032\032.blog.v1.ListPostsRe"
+    "sponse\"\025\202\323\344\223\002\017\022\r/api/v1/posts\022d\n\nUpdateP"
+    "ost\022\032.blog.v1.UpdatePostRequest\032\033.blog.v"
+    "1.UpdatePostResponse\"\035\202\323\344\223\002\027\032\022/api/v1/po"
+    "sts/{id}:\001*\022a\n\nDeletePost\022\032.blog.v1.Dele"
+    "tePostRequest\032\033.blog.v1.DeletePostRespon"
+    "se\"\032\202\323\344\223\002\024*\022/api/v1/posts/{id}By\n\013com.bl"
+    "og.v1B\tPostProtoP\001Z\"github.com/pplmx/pb/"
+    "blog/v1;blogv1\242\002\003BXX\252\002\007Blog.V1\312\002\007Blog\\V1"
+    "\342\002\023Blog\\V1\\GPBMetadata\352\002\010Blog::V1b\006proto"
+    "3"
 };
-static const ::_pbi::DescriptorTable* const descriptor_table_blog_2fv1_2fpost_2eproto_deps[2] =
+static const ::_pbi::DescriptorTable* const descriptor_table_blog_2fv1_2fpost_2eproto_deps[3] =
     {
         &::descriptor_table_buf_2fvalidate_2fvalidate_2eproto,
         &::descriptor_table_google_2fapi_2fannotations_2eproto,
+        &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::absl::once_flag descriptor_table_blog_2fv1_2fpost_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_blog_2fv1_2fpost_2eproto = {
     false,
     false,
-    1370,
+    2281,
     descriptor_table_protodef_blog_2fv1_2fpost_2eproto,
     "blog/v1/post.proto",
     &descriptor_table_blog_2fv1_2fpost_2eproto_once,
     descriptor_table_blog_2fv1_2fpost_2eproto_deps,
-    2,
+    3,
     11,
     schemas,
     file_default_instances,
@@ -525,6 +638,10 @@ namespace v1 {
 
 class CreatePostRequest::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<CreatePostRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_._has_bits_);
 };
 
 CreatePostRequest::CreatePostRequest(::google::protobuf::Arena* arena)
@@ -539,9 +656,12 @@ CreatePostRequest::CreatePostRequest(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE CreatePostRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from, const ::blog::v1::CreatePostRequest& from_msg)
-      : title_(arena, from.title_),
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        title_(arena, from.title_),
         content_(arena, from.content_),
-        _cached_size_{0} {}
+        author_(arena, from.author_),
+        category_(arena, from.category_) {}
 
 CreatePostRequest::CreatePostRequest(
     ::google::protobuf::Arena* arena,
@@ -562,9 +682,11 @@ CreatePostRequest::CreatePostRequest(
 inline PROTOBUF_NDEBUG_INLINE CreatePostRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : title_(arena),
+      : _cached_size_{0},
+        title_(arena),
         content_(arena),
-        _cached_size_{0} {}
+        author_(arena),
+        category_(arena) {}
 
 inline void CreatePostRequest::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -578,6 +700,8 @@ inline void CreatePostRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.title_.Destroy();
   _impl_.content_.Destroy();
+  _impl_.author_.Destroy();
+  _impl_.category_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -610,15 +734,15 @@ const ::google::protobuf::MessageLite::ClassData* CreatePostRequest::GetClassDat
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 46, 2> CreatePostRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 60, 2> CreatePostRequest::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_._has_bits_),
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     _class_data_.base(),
@@ -628,28 +752,42 @@ const ::_pbi::TcParseTable<1, 2, 0, 46, 2> CreatePostRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::CreatePostRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string content = 2 [json_name = "content", (.buf.validate.field) = {
+    // optional string category = 4 [json_name = "category"];
     {::_pbi::TcParser::FastUS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.content_)}},
+     {34, 1, 0, PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.category_)}},
     // string title = 1 [json_name = "title", (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 63, 0, PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.title_)}},
+    // string content = 2 [json_name = "content", (.buf.validate.field) = {
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.content_)}},
+    // optional string author = 3 [json_name = "author"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 0, 0, PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.author_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string title = 1 [json_name = "title", (.buf.validate.field) = {
-    {PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.title_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.title_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string content = 2 [json_name = "content", (.buf.validate.field) = {
-    {PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.content_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.content_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string author = 3 [json_name = "author"];
+    {PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.author_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string category = 4 [json_name = "category"];
+    {PROTOBUF_FIELD_OFFSET(CreatePostRequest, _impl_.category_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\31\5\7\0\0\0\0\0"
+    "\31\5\7\6\10\0\0\0"
     "blog.v1.CreatePostRequest"
     "title"
     "content"
+    "author"
+    "category"
   }},
 };
 
@@ -662,6 +800,16 @@ PROTOBUF_NOINLINE void CreatePostRequest::Clear() {
 
   _impl_.title_.ClearToEmpty();
   _impl_.content_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.author_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.category_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -694,6 +842,23 @@ PROTOBUF_NOINLINE void CreatePostRequest::Clear() {
             ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
                 _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.CreatePostRequest.content");
             target = stream->WriteStringMaybeAliased(2, _s, target);
+          }
+
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // optional string author = 3 [json_name = "author"];
+          if (cached_has_bits & 0x00000001u) {
+            const std::string& _s = this_._internal_author();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.CreatePostRequest.author");
+            target = stream->WriteStringMaybeAliased(3, _s, target);
+          }
+
+          // optional string category = 4 [json_name = "category"];
+          if (cached_has_bits & 0x00000002u) {
+            const std::string& _s = this_._internal_category();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.CreatePostRequest.category");
+            target = stream->WriteStringMaybeAliased(4, _s, target);
           }
 
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -732,6 +897,19 @@ PROTOBUF_NOINLINE void CreatePostRequest::Clear() {
                                               this_._internal_content());
             }
           }
+          cached_has_bits = this_._impl_._has_bits_[0];
+          if (cached_has_bits & 0x00000003u) {
+            // optional string author = 3 [json_name = "author"];
+            if (cached_has_bits & 0x00000001u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_author());
+            }
+            // optional string category = 4 [json_name = "category"];
+            if (cached_has_bits & 0x00000002u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_category());
+            }
+          }
           return this_.MaybeComputeUnknownFieldsSize(total_size,
                                                      &this_._impl_._cached_size_);
         }
@@ -750,6 +928,16 @@ void CreatePostRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const
   if (!from._internal_content().empty()) {
     _this->_internal_set_content(from._internal_content());
   }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_author(from._internal_author());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_category(from._internal_category());
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -766,8 +954,11 @@ void CreatePostRequest::InternalSwap(CreatePostRequest* PROTOBUF_RESTRICT other)
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.content_, &other->_impl_.content_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.author_, &other->_impl_.author_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.category_, &other->_impl_.category_, arena);
 }
 
 ::google::protobuf::Metadata CreatePostRequest::GetMetadata() const {
@@ -777,8 +968,17 @@ void CreatePostRequest::InternalSwap(CreatePostRequest* PROTOBUF_RESTRICT other)
 
 class CreatePostResponse::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<CreatePostResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_._has_bits_);
 };
 
+void CreatePostResponse::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.created_at_ != nullptr) _impl_.created_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
 CreatePostResponse::CreatePostResponse(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, _class_data_.base()) {
@@ -788,10 +988,32 @@ CreatePostResponse::CreatePostResponse(::google::protobuf::Arena* arena)
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:blog.v1.CreatePostResponse)
 }
+inline PROTOBUF_NDEBUG_INLINE CreatePostResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::blog::v1::CreatePostResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
+
 CreatePostResponse::CreatePostResponse(
-    ::google::protobuf::Arena* arena, const CreatePostResponse& from)
-    : CreatePostResponse(arena) {
-  MergeFrom(from);
+    ::google::protobuf::Arena* arena,
+    const CreatePostResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  CreatePostResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.created_at_ = (cached_has_bits & 0x00000001u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(
+                              arena, *from._impl_.created_at_)
+                        : nullptr;
+  _impl_.id_ = from._impl_.id_;
+
+  // @@protoc_insertion_point(copy_constructor:blog.v1.CreatePostResponse)
 }
 inline PROTOBUF_NDEBUG_INLINE CreatePostResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -800,7 +1022,12 @@ inline PROTOBUF_NDEBUG_INLINE CreatePostResponse::Impl_::Impl_(
 
 inline void CreatePostResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.id_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, created_at_),
+           0,
+           offsetof(Impl_, id_) -
+               offsetof(Impl_, created_at_) +
+               sizeof(Impl_::id_));
 }
 CreatePostResponse::~CreatePostResponse() {
   // @@protoc_insertion_point(destructor:blog.v1.CreatePostResponse)
@@ -809,6 +1036,7 @@ CreatePostResponse::~CreatePostResponse() {
 }
 inline void CreatePostResponse::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.created_at_;
   _impl_.~Impl_();
 }
 
@@ -841,17 +1069,17 @@ const ::google::protobuf::MessageLite::ClassData* CreatePostResponse::GetClassDa
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> CreatePostResponse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreatePostResponse::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_._has_bits_),
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     _class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -859,6 +1087,9 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> CreatePostResponse::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::CreatePostResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
+    // .google.protobuf.Timestamp created_at = 2 [json_name = "createdAt"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.created_at_)}},
     // uint32 id = 1 [json_name = "id"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreatePostResponse, _impl_.id_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.id_)}},
@@ -866,11 +1097,14 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> CreatePostResponse::_table_ = {
     65535, 65535
   }}, {{
     // uint32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.id_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.id_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
-  }},
-  // no aux_entries
-  {{
+    // .google.protobuf.Timestamp created_at = 2 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.created_at_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
   }},
 };
 
@@ -881,7 +1115,13 @@ PROTOBUF_NOINLINE void CreatePostResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    ABSL_DCHECK(_impl_.created_at_ != nullptr);
+    _impl_.created_at_->Clear();
+  }
   _impl_.id_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -907,6 +1147,14 @@ PROTOBUF_NOINLINE void CreatePostResponse::Clear() {
                 1, this_._internal_id(), target);
           }
 
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // .google.protobuf.Timestamp created_at = 2 [json_name = "createdAt"];
+          if (cached_has_bits & 0x00000001u) {
+            target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+                2, *this_._impl_.created_at_, this_._impl_.created_at_->GetCachedSize(), target,
+                stream);
+          }
+
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
             target =
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -930,6 +1178,16 @@ PROTOBUF_NOINLINE void CreatePostResponse::Clear() {
           // Prevent compiler warnings about cached_has_bits being unused
           (void)cached_has_bits;
 
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+           {
+            // .google.protobuf.Timestamp created_at = 2 [json_name = "createdAt"];
+            cached_has_bits =
+                this_._impl_._has_bits_[0];
+            if (cached_has_bits & 0x00000001u) {
+              total_size += 1 +
+                            ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.created_at_);
+            }
+          }
            {
             // uint32 id = 1 [json_name = "id"];
             if (this_._internal_id() != 0) {
@@ -944,14 +1202,26 @@ PROTOBUF_NOINLINE void CreatePostResponse::Clear() {
 void CreatePostResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<CreatePostResponse*>(&to_msg);
   auto& from = static_cast<const CreatePostResponse&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:blog.v1.CreatePostResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    ABSL_DCHECK(from._impl_.created_at_ != nullptr);
+    if (_this->_impl_.created_at_ == nullptr) {
+      _this->_impl_.created_at_ =
+          ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(arena, *from._impl_.created_at_);
+    } else {
+      _this->_impl_.created_at_->MergeFrom(*from._impl_.created_at_);
+    }
+  }
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
   }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -966,7 +1236,13 @@ void CreatePostResponse::CopyFrom(const CreatePostResponse& from) {
 void CreatePostResponse::InternalSwap(CreatePostResponse* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.id_, other->_impl_.id_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.id_)
+      + sizeof(CreatePostResponse::_impl_.id_)
+      - PROTOBUF_FIELD_OFFSET(CreatePostResponse, _impl_.created_at_)>(
+          reinterpret_cast<char*>(&_impl_.created_at_),
+          reinterpret_cast<char*>(&other->_impl_.created_at_));
 }
 
 ::google::protobuf::Metadata CreatePostResponse::GetMetadata() const {
@@ -1175,8 +1451,22 @@ void GetPostByIDRequest::InternalSwap(GetPostByIDRequest* PROTOBUF_RESTRICT othe
 
 class GetPostByIDResponse::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<GetPostByIDResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_._has_bits_);
 };
 
+void GetPostByIDResponse::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.created_at_ != nullptr) _impl_.created_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+void GetPostByIDResponse::clear_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.updated_at_ != nullptr) _impl_.updated_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
 GetPostByIDResponse::GetPostByIDResponse(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, _class_data_.base()) {
@@ -1189,9 +1479,12 @@ GetPostByIDResponse::GetPostByIDResponse(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE GetPostByIDResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from, const ::blog::v1::GetPostByIDResponse& from_msg)
-      : title_(arena, from.title_),
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        title_(arena, from.title_),
         content_(arena, from.content_),
-        _cached_size_{0} {}
+        author_(arena, from.author_),
+        category_(arena, from.category_) {}
 
 GetPostByIDResponse::GetPostByIDResponse(
     ::google::protobuf::Arena* arena,
@@ -1206,6 +1499,13 @@ GetPostByIDResponse::GetPostByIDResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.created_at_ = (cached_has_bits & 0x00000004u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(
+                              arena, *from._impl_.created_at_)
+                        : nullptr;
+  _impl_.updated_at_ = (cached_has_bits & 0x00000008u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(
+                              arena, *from._impl_.updated_at_)
+                        : nullptr;
   _impl_.id_ = from._impl_.id_;
 
   // @@protoc_insertion_point(copy_constructor:blog.v1.GetPostByIDResponse)
@@ -1213,13 +1513,20 @@ GetPostByIDResponse::GetPostByIDResponse(
 inline PROTOBUF_NDEBUG_INLINE GetPostByIDResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : title_(arena),
+      : _cached_size_{0},
+        title_(arena),
         content_(arena),
-        _cached_size_{0} {}
+        author_(arena),
+        category_(arena) {}
 
 inline void GetPostByIDResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.id_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, created_at_),
+           0,
+           offsetof(Impl_, id_) -
+               offsetof(Impl_, created_at_) +
+               sizeof(Impl_::id_));
 }
 GetPostByIDResponse::~GetPostByIDResponse() {
   // @@protoc_insertion_point(destructor:blog.v1.GetPostByIDResponse)
@@ -1230,6 +1537,10 @@ inline void GetPostByIDResponse::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.title_.Destroy();
   _impl_.content_.Destroy();
+  _impl_.author_.Destroy();
+  _impl_.category_.Destroy();
+  delete _impl_.created_at_;
+  delete _impl_.updated_at_;
   _impl_.~Impl_();
 }
 
@@ -1262,17 +1573,17 @@ const ::google::protobuf::MessageLite::ClassData* GetPostByIDResponse::GetClassD
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 48, 2> GetPostByIDResponse::_table_ = {
+const ::_pbi::TcParseTable<3, 7, 2, 62, 2> GetPostByIDResponse::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_._has_bits_),
     0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    7,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     _class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -1290,25 +1601,52 @@ const ::_pbi::TcParseTable<2, 3, 0, 48, 2> GetPostByIDResponse::_table_ = {
     // string content = 3 [json_name = "content"];
     {::_pbi::TcParser::FastUS1,
      {26, 63, 0, PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.content_)}},
+    // optional string author = 4 [json_name = "author"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 0, 0, PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.author_)}},
+    // optional string category = 5 [json_name = "category"];
+    {::_pbi::TcParser::FastUS1,
+     {42, 1, 0, PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.category_)}},
+    // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+    {::_pbi::TcParser::FastMtS1,
+     {50, 2, 0, PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.created_at_)}},
+    // .google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];
+    {::_pbi::TcParser::FastMtS1,
+     {58, 3, 1, PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.updated_at_)}},
   }}, {{
     65535, 65535
   }}, {{
     // uint32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.id_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.id_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
     // string title = 2 [json_name = "title"];
-    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.title_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.title_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string content = 3 [json_name = "content"];
-    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.content_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.content_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\33\0\5\7\0\0\0\0"
+    // optional string author = 4 [json_name = "author"];
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.author_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string category = 5 [json_name = "category"];
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.category_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.created_at_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];
+    {PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.updated_at_), _Internal::kHasBitsOffset + 3, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
+    "\33\0\5\7\6\10\0\0"
     "blog.v1.GetPostByIDResponse"
     "title"
     "content"
+    "author"
+    "category"
   }},
 };
 
@@ -1321,7 +1659,25 @@ PROTOBUF_NOINLINE void GetPostByIDResponse::Clear() {
 
   _impl_.title_.ClearToEmpty();
   _impl_.content_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.author_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.category_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      ABSL_DCHECK(_impl_.created_at_ != nullptr);
+      _impl_.created_at_->Clear();
+    }
+    if (cached_has_bits & 0x00000008u) {
+      ABSL_DCHECK(_impl_.updated_at_ != nullptr);
+      _impl_.updated_at_->Clear();
+    }
+  }
   _impl_.id_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -1363,6 +1719,37 @@ PROTOBUF_NOINLINE void GetPostByIDResponse::Clear() {
             target = stream->WriteStringMaybeAliased(3, _s, target);
           }
 
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // optional string author = 4 [json_name = "author"];
+          if (cached_has_bits & 0x00000001u) {
+            const std::string& _s = this_._internal_author();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.GetPostByIDResponse.author");
+            target = stream->WriteStringMaybeAliased(4, _s, target);
+          }
+
+          // optional string category = 5 [json_name = "category"];
+          if (cached_has_bits & 0x00000002u) {
+            const std::string& _s = this_._internal_category();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.GetPostByIDResponse.category");
+            target = stream->WriteStringMaybeAliased(5, _s, target);
+          }
+
+          // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+          if (cached_has_bits & 0x00000004u) {
+            target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+                6, *this_._impl_.created_at_, this_._impl_.created_at_->GetCachedSize(), target,
+                stream);
+          }
+
+          // .google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];
+          if (cached_has_bits & 0x00000008u) {
+            target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+                7, *this_._impl_.updated_at_, this_._impl_.updated_at_->GetCachedSize(), target,
+                stream);
+          }
+
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
             target =
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1398,6 +1785,31 @@ PROTOBUF_NOINLINE void GetPostByIDResponse::Clear() {
               total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                               this_._internal_content());
             }
+          }
+          cached_has_bits = this_._impl_._has_bits_[0];
+          if (cached_has_bits & 0x0000000fu) {
+            // optional string author = 4 [json_name = "author"];
+            if (cached_has_bits & 0x00000001u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_author());
+            }
+            // optional string category = 5 [json_name = "category"];
+            if (cached_has_bits & 0x00000002u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_category());
+            }
+            // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+            if (cached_has_bits & 0x00000004u) {
+              total_size += 1 +
+                            ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.created_at_);
+            }
+            // .google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];
+            if (cached_has_bits & 0x00000008u) {
+              total_size += 1 +
+                            ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.updated_at_);
+            }
+          }
+           {
             // uint32 id = 1 [json_name = "id"];
             if (this_._internal_id() != 0) {
               total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
@@ -1411,6 +1823,7 @@ PROTOBUF_NOINLINE void GetPostByIDResponse::Clear() {
 void GetPostByIDResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<GetPostByIDResponse*>(&to_msg);
   auto& from = static_cast<const GetPostByIDResponse&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:blog.v1.GetPostByIDResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
@@ -1422,9 +1835,37 @@ void GetPostByIDResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, con
   if (!from._internal_content().empty()) {
     _this->_internal_set_content(from._internal_content());
   }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_author(from._internal_author());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_category(from._internal_category());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      ABSL_DCHECK(from._impl_.created_at_ != nullptr);
+      if (_this->_impl_.created_at_ == nullptr) {
+        _this->_impl_.created_at_ =
+            ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(arena, *from._impl_.created_at_);
+      } else {
+        _this->_impl_.created_at_->MergeFrom(*from._impl_.created_at_);
+      }
+    }
+    if (cached_has_bits & 0x00000008u) {
+      ABSL_DCHECK(from._impl_.updated_at_ != nullptr);
+      if (_this->_impl_.updated_at_ == nullptr) {
+        _this->_impl_.updated_at_ =
+            ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(arena, *from._impl_.updated_at_);
+      } else {
+        _this->_impl_.updated_at_->MergeFrom(*from._impl_.updated_at_);
+      }
+    }
+  }
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
   }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1441,9 +1882,17 @@ void GetPostByIDResponse::InternalSwap(GetPostByIDResponse* PROTOBUF_RESTRICT ot
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.content_, &other->_impl_.content_, arena);
-        swap(_impl_.id_, other->_impl_.id_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.author_, &other->_impl_.author_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.category_, &other->_impl_.category_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.id_)
+      + sizeof(GetPostByIDResponse::_impl_.id_)
+      - PROTOBUF_FIELD_OFFSET(GetPostByIDResponse, _impl_.created_at_)>(
+          reinterpret_cast<char*>(&_impl_.created_at_),
+          reinterpret_cast<char*>(&other->_impl_.created_at_));
 }
 
 ::google::protobuf::Metadata GetPostByIDResponse::GetMetadata() const {
@@ -1453,46 +1902,94 @@ void GetPostByIDResponse::InternalSwap(GetPostByIDResponse* PROTOBUF_RESTRICT ot
 
 class ListPostsRequest::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<ListPostsRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_._has_bits_);
 };
 
 ListPostsRequest::ListPostsRequest(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena, _class_data_.base()) {
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:blog.v1.ListPostsRequest)
 }
+inline PROTOBUF_NDEBUG_INLINE ListPostsRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::blog::v1::ListPostsRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        author_(arena, from.author_),
+        category_(arena, from.category_) {}
+
 ListPostsRequest::ListPostsRequest(
     ::google::protobuf::Arena* arena,
     const ListPostsRequest& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena, _class_data_.base()) {
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   ListPostsRequest* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, page_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, page_),
+           offsetof(Impl_, page_size_) -
+               offsetof(Impl_, page_) +
+               sizeof(Impl_::page_size_));
 
   // @@protoc_insertion_point(copy_constructor:blog.v1.ListPostsRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE ListPostsRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0},
+        author_(arena),
+        category_(arena) {}
+
+inline void ListPostsRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, page_),
+           0,
+           offsetof(Impl_, page_size_) -
+               offsetof(Impl_, page_) +
+               sizeof(Impl_::page_size_));
+}
+ListPostsRequest::~ListPostsRequest() {
+  // @@protoc_insertion_point(destructor:blog.v1.ListPostsRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void ListPostsRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.author_.Destroy();
+  _impl_.category_.Destroy();
+  _impl_.~Impl_();
 }
 
 PROTOBUF_CONSTINIT
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
 const ::google::protobuf::MessageLite::ClassDataFull
     ListPostsRequest::_class_data_ = {
-        ::google::protobuf::internal::ZeroFieldsBase::ClassData{
+        ::google::protobuf::Message::ClassData{
             &_ListPostsRequest_default_instance_._instance,
             &_table_.header,
             nullptr,  // OnDemandRegisterArenaDtor
             nullptr,  // IsInitialized
             &ListPostsRequest::MergeImpl,
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-            ::google::protobuf::internal::ZeroFieldsBase::GetDeleteImpl<ListPostsRequest>(),
-            ::google::protobuf::internal::ZeroFieldsBase::GetNewImpl<ListPostsRequest>(),
-            ::google::protobuf::internal::ZeroFieldsBase::GetClearImpl<ListPostsRequest>(), &ListPostsRequest::ByteSizeLong,
+            ::google::protobuf::Message::GetDeleteImpl<ListPostsRequest>(),
+            ::google::protobuf::Message::GetNewImpl<ListPostsRequest>(),
+            ::google::protobuf::Message::GetClearImpl<ListPostsRequest>(), &ListPostsRequest::ByteSizeLong,
                 &ListPostsRequest::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
             PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_._cached_size_),
@@ -1508,15 +2005,15 @@ const ::google::protobuf::MessageLite::ClassData* ListPostsRequest::GetClassData
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 0, 0, 0, 2> ListPostsRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 47, 2> ListPostsRequest::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_._has_bits_),
     0, // no _extensions_
-    0, 0,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967295,  // skipmap
-    offsetof(decltype(_table_), field_names),  // no field_entries
-    0,  // num_field_entries
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     _class_data_.base(),
@@ -1526,31 +2023,234 @@ const ::_pbi::TcParseTable<0, 0, 0, 0, 2> ListPostsRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::ListPostsRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // uint32 page_size = 4 [json_name = "pageSize", (.buf.validate.field) = {
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListPostsRequest, _impl_.page_size_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.page_size_)}},
+    // optional string author = 1 [json_name = "author"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.author_)}},
+    // optional string category = 2 [json_name = "category"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.category_)}},
+    // uint32 page = 3 [json_name = "page", (.buf.validate.field) = {
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListPostsRequest, _impl_.page_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.page_)}},
   }}, {{
     65535, 65535
+  }}, {{
+    // optional string author = 1 [json_name = "author"];
+    {PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.author_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string category = 2 [json_name = "category"];
+    {PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.category_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint32 page = 3 [json_name = "page", (.buf.validate.field) = {
+    {PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.page_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // uint32 page_size = 4 [json_name = "pageSize", (.buf.validate.field) = {
+    {PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.page_size_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
   }},
-  // no field_entries, or aux_entries
+  // no aux_entries
   {{
+    "\30\6\10\0\0\0\0\0"
+    "blog.v1.ListPostsRequest"
+    "author"
+    "category"
   }},
 };
 
+PROTOBUF_NOINLINE void ListPostsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:blog.v1.ListPostsRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.author_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.category_.ClearNonDefaultToEmpty();
+    }
+  }
+  ::memset(&_impl_.page_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.page_size_) -
+      reinterpret_cast<char*>(&_impl_.page_)) + sizeof(_impl_.page_size_));
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::uint8_t* ListPostsRequest::_InternalSerialize(
+            const MessageLite& base, ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) {
+          const ListPostsRequest& this_ = static_cast<const ListPostsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::uint8_t* ListPostsRequest::_InternalSerialize(
+            ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+          const ListPostsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(serialize_to_array_start:blog.v1.ListPostsRequest)
+          ::uint32_t cached_has_bits = 0;
+          (void)cached_has_bits;
+
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // optional string author = 1 [json_name = "author"];
+          if (cached_has_bits & 0x00000001u) {
+            const std::string& _s = this_._internal_author();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.ListPostsRequest.author");
+            target = stream->WriteStringMaybeAliased(1, _s, target);
+          }
+
+          // optional string category = 2 [json_name = "category"];
+          if (cached_has_bits & 0x00000002u) {
+            const std::string& _s = this_._internal_category();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.ListPostsRequest.category");
+            target = stream->WriteStringMaybeAliased(2, _s, target);
+          }
+
+          // uint32 page = 3 [json_name = "page", (.buf.validate.field) = {
+          if (this_._internal_page() != 0) {
+            target = stream->EnsureSpace(target);
+            target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+                3, this_._internal_page(), target);
+          }
+
+          // uint32 page_size = 4 [json_name = "pageSize", (.buf.validate.field) = {
+          if (this_._internal_page_size() != 0) {
+            target = stream->EnsureSpace(target);
+            target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+                4, this_._internal_page_size(), target);
+          }
+
+          if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+            target =
+                ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+                    this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+          }
+          // @@protoc_insertion_point(serialize_to_array_end:blog.v1.ListPostsRequest)
+          return target;
+        }
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::size_t ListPostsRequest::ByteSizeLong(const MessageLite& base) {
+          const ListPostsRequest& this_ = static_cast<const ListPostsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::size_t ListPostsRequest::ByteSizeLong() const {
+          const ListPostsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(message_byte_size_start:blog.v1.ListPostsRequest)
+          ::size_t total_size = 0;
+
+          ::uint32_t cached_has_bits = 0;
+          // Prevent compiler warnings about cached_has_bits being unused
+          (void)cached_has_bits;
+
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+          cached_has_bits = this_._impl_._has_bits_[0];
+          if (cached_has_bits & 0x00000003u) {
+            // optional string author = 1 [json_name = "author"];
+            if (cached_has_bits & 0x00000001u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_author());
+            }
+            // optional string category = 2 [json_name = "category"];
+            if (cached_has_bits & 0x00000002u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_category());
+            }
+          }
+           {
+            // uint32 page = 3 [json_name = "page", (.buf.validate.field) = {
+            if (this_._internal_page() != 0) {
+              total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+                  this_._internal_page());
+            }
+            // uint32 page_size = 4 [json_name = "pageSize", (.buf.validate.field) = {
+            if (this_._internal_page_size() != 0) {
+              total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+                  this_._internal_page_size());
+            }
+          }
+          return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                                     &this_._impl_._cached_size_);
+        }
+
+void ListPostsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ListPostsRequest*>(&to_msg);
+  auto& from = static_cast<const ListPostsRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:blog.v1.ListPostsRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_author(from._internal_author());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_category(from._internal_category());
+    }
+  }
+  if (from._internal_page() != 0) {
+    _this->_impl_.page_ = from._impl_.page_;
+  }
+  if (from._internal_page_size() != 0) {
+    _this->_impl_.page_size_ = from._impl_.page_size_;
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ListPostsRequest::CopyFrom(const ListPostsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:blog.v1.ListPostsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
 
-
-
-
-
+void ListPostsRequest::InternalSwap(ListPostsRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.author_, &other->_impl_.author_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.category_, &other->_impl_.category_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.page_size_)
+      + sizeof(ListPostsRequest::_impl_.page_size_)
+      - PROTOBUF_FIELD_OFFSET(ListPostsRequest, _impl_.page_)>(
+          reinterpret_cast<char*>(&_impl_.page_),
+          reinterpret_cast<char*>(&other->_impl_.page_));
+}
 
 ::google::protobuf::Metadata ListPostsRequest::GetMetadata() const {
-  return ::google::protobuf::internal::ZeroFieldsBase::GetMetadataImpl(GetClassData()->full());
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================
 
 class ListPostsResponse_Post::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<ListPostsResponse_Post>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_._has_bits_);
 };
 
+void ListPostsResponse_Post::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.created_at_ != nullptr) _impl_.created_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
 ListPostsResponse_Post::ListPostsResponse_Post(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, _class_data_.base()) {
@@ -1563,9 +2263,12 @@ ListPostsResponse_Post::ListPostsResponse_Post(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE ListPostsResponse_Post::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from, const ::blog::v1::ListPostsResponse_Post& from_msg)
-      : title_(arena, from.title_),
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        title_(arena, from.title_),
         content_(arena, from.content_),
-        _cached_size_{0} {}
+        author_(arena, from.author_),
+        category_(arena, from.category_) {}
 
 ListPostsResponse_Post::ListPostsResponse_Post(
     ::google::protobuf::Arena* arena,
@@ -1580,6 +2283,10 @@ ListPostsResponse_Post::ListPostsResponse_Post(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.created_at_ = (cached_has_bits & 0x00000004u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(
+                              arena, *from._impl_.created_at_)
+                        : nullptr;
   _impl_.id_ = from._impl_.id_;
 
   // @@protoc_insertion_point(copy_constructor:blog.v1.ListPostsResponse.Post)
@@ -1587,13 +2294,20 @@ ListPostsResponse_Post::ListPostsResponse_Post(
 inline PROTOBUF_NDEBUG_INLINE ListPostsResponse_Post::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : title_(arena),
+      : _cached_size_{0},
+        title_(arena),
         content_(arena),
-        _cached_size_{0} {}
+        author_(arena),
+        category_(arena) {}
 
 inline void ListPostsResponse_Post::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.id_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, created_at_),
+           0,
+           offsetof(Impl_, id_) -
+               offsetof(Impl_, created_at_) +
+               sizeof(Impl_::id_));
 }
 ListPostsResponse_Post::~ListPostsResponse_Post() {
   // @@protoc_insertion_point(destructor:blog.v1.ListPostsResponse.Post)
@@ -1604,6 +2318,9 @@ inline void ListPostsResponse_Post::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.title_.Destroy();
   _impl_.content_.Destroy();
+  _impl_.author_.Destroy();
+  _impl_.category_.Destroy();
+  delete _impl_.created_at_;
   _impl_.~Impl_();
 }
 
@@ -1636,17 +2353,17 @@ const ::google::protobuf::MessageLite::ClassData* ListPostsResponse_Post::GetCla
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 51, 2> ListPostsResponse_Post::_table_ = {
+const ::_pbi::TcParseTable<3, 6, 1, 65, 2> ListPostsResponse_Post::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_._has_bits_),
     0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
+    6, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
+    4294967232,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    6,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     _class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -1664,25 +2381,46 @@ const ::_pbi::TcParseTable<2, 3, 0, 51, 2> ListPostsResponse_Post::_table_ = {
     // string content = 3 [json_name = "content"];
     {::_pbi::TcParser::FastUS1,
      {26, 63, 0, PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.content_)}},
+    // optional string author = 4 [json_name = "author"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 0, 0, PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.author_)}},
+    // optional string category = 5 [json_name = "category"];
+    {::_pbi::TcParser::FastUS1,
+     {42, 1, 0, PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.category_)}},
+    // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+    {::_pbi::TcParser::FastMtS1,
+     {50, 2, 0, PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.created_at_)}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
     // uint32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.id_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.id_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
     // string title = 2 [json_name = "title"];
-    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.title_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.title_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string content = 3 [json_name = "content"];
-    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.content_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.content_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\36\0\5\7\0\0\0\0"
+    // optional string author = 4 [json_name = "author"];
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.author_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string category = 5 [json_name = "category"];
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.category_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.created_at_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
+    "\36\0\5\7\6\10\0\0"
     "blog.v1.ListPostsResponse.Post"
     "title"
     "content"
+    "author"
+    "category"
   }},
 };
 
@@ -1695,7 +2433,21 @@ PROTOBUF_NOINLINE void ListPostsResponse_Post::Clear() {
 
   _impl_.title_.ClearToEmpty();
   _impl_.content_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.author_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.category_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      ABSL_DCHECK(_impl_.created_at_ != nullptr);
+      _impl_.created_at_->Clear();
+    }
+  }
   _impl_.id_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -1737,6 +2489,30 @@ PROTOBUF_NOINLINE void ListPostsResponse_Post::Clear() {
             target = stream->WriteStringMaybeAliased(3, _s, target);
           }
 
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // optional string author = 4 [json_name = "author"];
+          if (cached_has_bits & 0x00000001u) {
+            const std::string& _s = this_._internal_author();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.ListPostsResponse.Post.author");
+            target = stream->WriteStringMaybeAliased(4, _s, target);
+          }
+
+          // optional string category = 5 [json_name = "category"];
+          if (cached_has_bits & 0x00000002u) {
+            const std::string& _s = this_._internal_category();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.ListPostsResponse.Post.category");
+            target = stream->WriteStringMaybeAliased(5, _s, target);
+          }
+
+          // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+          if (cached_has_bits & 0x00000004u) {
+            target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+                6, *this_._impl_.created_at_, this_._impl_.created_at_->GetCachedSize(), target,
+                stream);
+          }
+
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
             target =
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1772,6 +2548,26 @@ PROTOBUF_NOINLINE void ListPostsResponse_Post::Clear() {
               total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                               this_._internal_content());
             }
+          }
+          cached_has_bits = this_._impl_._has_bits_[0];
+          if (cached_has_bits & 0x00000007u) {
+            // optional string author = 4 [json_name = "author"];
+            if (cached_has_bits & 0x00000001u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_author());
+            }
+            // optional string category = 5 [json_name = "category"];
+            if (cached_has_bits & 0x00000002u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_category());
+            }
+            // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+            if (cached_has_bits & 0x00000004u) {
+              total_size += 1 +
+                            ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.created_at_);
+            }
+          }
+           {
             // uint32 id = 1 [json_name = "id"];
             if (this_._internal_id() != 0) {
               total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
@@ -1785,6 +2581,7 @@ PROTOBUF_NOINLINE void ListPostsResponse_Post::Clear() {
 void ListPostsResponse_Post::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<ListPostsResponse_Post*>(&to_msg);
   auto& from = static_cast<const ListPostsResponse_Post&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:blog.v1.ListPostsResponse.Post)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
@@ -1796,9 +2593,28 @@ void ListPostsResponse_Post::MergeImpl(::google::protobuf::MessageLite& to_msg, 
   if (!from._internal_content().empty()) {
     _this->_internal_set_content(from._internal_content());
   }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_author(from._internal_author());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_category(from._internal_category());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      ABSL_DCHECK(from._impl_.created_at_ != nullptr);
+      if (_this->_impl_.created_at_ == nullptr) {
+        _this->_impl_.created_at_ =
+            ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(arena, *from._impl_.created_at_);
+      } else {
+        _this->_impl_.created_at_->MergeFrom(*from._impl_.created_at_);
+      }
+    }
+  }
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
   }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1815,9 +2631,17 @@ void ListPostsResponse_Post::InternalSwap(ListPostsResponse_Post* PROTOBUF_RESTR
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.content_, &other->_impl_.content_, arena);
-        swap(_impl_.id_, other->_impl_.id_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.author_, &other->_impl_.author_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.category_, &other->_impl_.category_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.id_)
+      + sizeof(ListPostsResponse_Post::_impl_.id_)
+      - PROTOBUF_FIELD_OFFSET(ListPostsResponse_Post, _impl_.created_at_)>(
+          reinterpret_cast<char*>(&_impl_.created_at_),
+          reinterpret_cast<char*>(&other->_impl_.created_at_));
 }
 
 ::google::protobuf::Metadata ListPostsResponse_Post::GetMetadata() const {
@@ -1857,6 +2681,7 @@ ListPostsResponse::ListPostsResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.total_count_ = from._impl_.total_count_;
 
   // @@protoc_insertion_point(copy_constructor:blog.v1.ListPostsResponse)
 }
@@ -1868,6 +2693,7 @@ inline PROTOBUF_NDEBUG_INLINE ListPostsResponse::Impl_::Impl_(
 
 inline void ListPostsResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.total_count_ = {};
 }
 ListPostsResponse::~ListPostsResponse() {
   // @@protoc_insertion_point(destructor:blog.v1.ListPostsResponse)
@@ -1908,15 +2734,15 @@ const ::google::protobuf::MessageLite::ClassData* ListPostsResponse::GetClassDat
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> ListPostsResponse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 1, 0, 2> ListPostsResponse::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
+    2,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     _class_data_.base(),
@@ -1926,6 +2752,9 @@ const ::_pbi::TcParseTable<0, 1, 1, 0, 2> ListPostsResponse::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::ListPostsResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
+    // uint32 total_count = 2 [json_name = "totalCount"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListPostsResponse, _impl_.total_count_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(ListPostsResponse, _impl_.total_count_)}},
     // repeated .blog.v1.ListPostsResponse.Post posts = 1 [json_name = "posts"];
     {::_pbi::TcParser::FastMtR1,
      {10, 63, 0, PROTOBUF_FIELD_OFFSET(ListPostsResponse, _impl_.posts_)}},
@@ -1935,6 +2764,9 @@ const ::_pbi::TcParseTable<0, 1, 1, 0, 2> ListPostsResponse::_table_ = {
     // repeated .blog.v1.ListPostsResponse.Post posts = 1 [json_name = "posts"];
     {PROTOBUF_FIELD_OFFSET(ListPostsResponse, _impl_.posts_), 0, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // uint32 total_count = 2 [json_name = "totalCount"];
+    {PROTOBUF_FIELD_OFFSET(ListPostsResponse, _impl_.total_count_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
   }}, {{
     {::_pbi::TcParser::GetTable<::blog::v1::ListPostsResponse_Post>()},
   }}, {{
@@ -1949,6 +2781,7 @@ PROTOBUF_NOINLINE void ListPostsResponse::Clear() {
   (void) cached_has_bits;
 
   _impl_.posts_.Clear();
+  _impl_.total_count_ = 0u;
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -1976,6 +2809,13 @@ PROTOBUF_NOINLINE void ListPostsResponse::Clear() {
                 ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
                     1, repfield, repfield.GetCachedSize(),
                     target, stream);
+          }
+
+          // uint32 total_count = 2 [json_name = "totalCount"];
+          if (this_._internal_total_count() != 0) {
+            target = stream->EnsureSpace(target);
+            target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+                2, this_._internal_total_count(), target);
           }
 
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -2011,6 +2851,13 @@ PROTOBUF_NOINLINE void ListPostsResponse::Clear() {
               }
             }
           }
+           {
+            // uint32 total_count = 2 [json_name = "totalCount"];
+            if (this_._internal_total_count() != 0) {
+              total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+                  this_._internal_total_count());
+            }
+          }
           return this_.MaybeComputeUnknownFieldsSize(total_size,
                                                      &this_._impl_._cached_size_);
         }
@@ -2025,6 +2872,9 @@ void ListPostsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const
 
   _this->_internal_mutable_posts()->MergeFrom(
       from._internal_posts());
+  if (from._internal_total_count() != 0) {
+    _this->_impl_.total_count_ = from._impl_.total_count_;
+  }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2040,6 +2890,7 @@ void ListPostsResponse::InternalSwap(ListPostsResponse* PROTOBUF_RESTRICT other)
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.posts_.InternalSwap(&other->_impl_.posts_);
+        swap(_impl_.total_count_, other->_impl_.total_count_);
 }
 
 ::google::protobuf::Metadata ListPostsResponse::GetMetadata() const {
@@ -2049,6 +2900,10 @@ void ListPostsResponse::InternalSwap(ListPostsResponse* PROTOBUF_RESTRICT other)
 
 class UpdatePostRequest::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<UpdatePostRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_._has_bits_);
 };
 
 UpdatePostRequest::UpdatePostRequest(::google::protobuf::Arena* arena)
@@ -2063,9 +2918,11 @@ UpdatePostRequest::UpdatePostRequest(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE UpdatePostRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from, const ::blog::v1::UpdatePostRequest& from_msg)
-      : title_(arena, from.title_),
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        title_(arena, from.title_),
         content_(arena, from.content_),
-        _cached_size_{0} {}
+        category_(arena, from.category_) {}
 
 UpdatePostRequest::UpdatePostRequest(
     ::google::protobuf::Arena* arena,
@@ -2087,9 +2944,10 @@ UpdatePostRequest::UpdatePostRequest(
 inline PROTOBUF_NDEBUG_INLINE UpdatePostRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : title_(arena),
+      : _cached_size_{0},
+        title_(arena),
         content_(arena),
-        _cached_size_{0} {}
+        category_(arena) {}
 
 inline void UpdatePostRequest::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -2104,6 +2962,7 @@ inline void UpdatePostRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.title_.Destroy();
   _impl_.content_.Destroy();
+  _impl_.category_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -2136,15 +2995,15 @@ const ::google::protobuf::MessageLite::ClassData* UpdatePostRequest::GetClassDat
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 46, 2> UpdatePostRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 54, 2> UpdatePostRequest::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_._has_bits_),
     0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     _class_data_.base(),
@@ -2154,35 +3013,41 @@ const ::_pbi::TcParseTable<2, 3, 0, 46, 2> UpdatePostRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::UpdatePostRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // optional string category = 4 [json_name = "category"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.category_)}},
     // uint32 id = 1 [json_name = "id", (.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdatePostRequest, _impl_.id_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.id_)}},
-    // string title = 2 [json_name = "title"];
+    // optional string title = 2 [json_name = "title", (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.title_)}},
-    // string content = 3 [json_name = "content"];
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.title_)}},
+    // optional string content = 3 [json_name = "content", (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
-     {26, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.content_)}},
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.content_)}},
   }}, {{
     65535, 65535
   }}, {{
     // uint32 id = 1 [json_name = "id", (.buf.validate.field) = {
-    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.id_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.id_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
-    // string title = 2 [json_name = "title"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.title_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string content = 3 [json_name = "content"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.content_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string title = 2 [json_name = "title", (.buf.validate.field) = {
+    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.title_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string content = 3 [json_name = "content", (.buf.validate.field) = {
+    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.content_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string category = 4 [json_name = "category"];
+    {PROTOBUF_FIELD_OFFSET(UpdatePostRequest, _impl_.category_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\31\0\5\7\0\0\0\0"
+    "\31\0\5\7\10\0\0\0"
     "blog.v1.UpdatePostRequest"
     "title"
     "content"
+    "category"
   }},
 };
 
@@ -2193,9 +3058,20 @@ PROTOBUF_NOINLINE void UpdatePostRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.title_.ClearToEmpty();
-  _impl_.content_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.title_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.content_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _impl_.category_.ClearNonDefaultToEmpty();
+    }
+  }
   _impl_.id_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -2221,20 +3097,29 @@ PROTOBUF_NOINLINE void UpdatePostRequest::Clear() {
                 1, this_._internal_id(), target);
           }
 
-          // string title = 2 [json_name = "title"];
-          if (!this_._internal_title().empty()) {
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // optional string title = 2 [json_name = "title", (.buf.validate.field) = {
+          if (cached_has_bits & 0x00000001u) {
             const std::string& _s = this_._internal_title();
             ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
                 _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.UpdatePostRequest.title");
             target = stream->WriteStringMaybeAliased(2, _s, target);
           }
 
-          // string content = 3 [json_name = "content"];
-          if (!this_._internal_content().empty()) {
+          // optional string content = 3 [json_name = "content", (.buf.validate.field) = {
+          if (cached_has_bits & 0x00000002u) {
             const std::string& _s = this_._internal_content();
             ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
                 _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.UpdatePostRequest.content");
             target = stream->WriteStringMaybeAliased(3, _s, target);
+          }
+
+          // optional string category = 4 [json_name = "category"];
+          if (cached_has_bits & 0x00000004u) {
+            const std::string& _s = this_._internal_category();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "blog.v1.UpdatePostRequest.category");
+            target = stream->WriteStringMaybeAliased(4, _s, target);
           }
 
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -2261,17 +3146,25 @@ PROTOBUF_NOINLINE void UpdatePostRequest::Clear() {
           (void)cached_has_bits;
 
           ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-           {
-            // string title = 2 [json_name = "title"];
-            if (!this_._internal_title().empty()) {
+          cached_has_bits = this_._impl_._has_bits_[0];
+          if (cached_has_bits & 0x00000007u) {
+            // optional string title = 2 [json_name = "title", (.buf.validate.field) = {
+            if (cached_has_bits & 0x00000001u) {
               total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                               this_._internal_title());
             }
-            // string content = 3 [json_name = "content"];
-            if (!this_._internal_content().empty()) {
+            // optional string content = 3 [json_name = "content", (.buf.validate.field) = {
+            if (cached_has_bits & 0x00000002u) {
               total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                               this_._internal_content());
             }
+            // optional string category = 4 [json_name = "category"];
+            if (cached_has_bits & 0x00000004u) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_category());
+            }
+          }
+           {
             // uint32 id = 1 [json_name = "id", (.buf.validate.field) = {
             if (this_._internal_id() != 0) {
               total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
@@ -2290,15 +3183,22 @@ void UpdatePostRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_title().empty()) {
-    _this->_internal_set_title(from._internal_title());
-  }
-  if (!from._internal_content().empty()) {
-    _this->_internal_set_content(from._internal_content());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_title(from._internal_title());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_content(from._internal_content());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_set_category(from._internal_category());
+    }
   }
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
   }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2315,8 +3215,10 @@ void UpdatePostRequest::InternalSwap(UpdatePostRequest* PROTOBUF_RESTRICT other)
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.content_, &other->_impl_.content_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.category_, &other->_impl_.category_, arena);
         swap(_impl_.id_, other->_impl_.id_);
 }
 
@@ -2327,8 +3229,17 @@ void UpdatePostRequest::InternalSwap(UpdatePostRequest* PROTOBUF_RESTRICT other)
 
 class UpdatePostResponse::_Internal {
  public:
+  using HasBits =
+      decltype(std::declval<UpdatePostResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_._has_bits_);
 };
 
+void UpdatePostResponse::clear_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.updated_at_ != nullptr) _impl_.updated_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
 UpdatePostResponse::UpdatePostResponse(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, _class_data_.base()) {
@@ -2338,10 +3249,32 @@ UpdatePostResponse::UpdatePostResponse(::google::protobuf::Arena* arena)
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:blog.v1.UpdatePostResponse)
 }
+inline PROTOBUF_NDEBUG_INLINE UpdatePostResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::blog::v1::UpdatePostResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
+
 UpdatePostResponse::UpdatePostResponse(
-    ::google::protobuf::Arena* arena, const UpdatePostResponse& from)
-    : UpdatePostResponse(arena) {
-  MergeFrom(from);
+    ::google::protobuf::Arena* arena,
+    const UpdatePostResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  UpdatePostResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.updated_at_ = (cached_has_bits & 0x00000001u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(
+                              arena, *from._impl_.updated_at_)
+                        : nullptr;
+  _impl_.id_ = from._impl_.id_;
+
+  // @@protoc_insertion_point(copy_constructor:blog.v1.UpdatePostResponse)
 }
 inline PROTOBUF_NDEBUG_INLINE UpdatePostResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -2350,7 +3283,12 @@ inline PROTOBUF_NDEBUG_INLINE UpdatePostResponse::Impl_::Impl_(
 
 inline void UpdatePostResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.id_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, updated_at_),
+           0,
+           offsetof(Impl_, id_) -
+               offsetof(Impl_, updated_at_) +
+               sizeof(Impl_::id_));
 }
 UpdatePostResponse::~UpdatePostResponse() {
   // @@protoc_insertion_point(destructor:blog.v1.UpdatePostResponse)
@@ -2359,6 +3297,7 @@ UpdatePostResponse::~UpdatePostResponse() {
 }
 inline void UpdatePostResponse::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.updated_at_;
   _impl_.~Impl_();
 }
 
@@ -2391,17 +3330,17 @@ const ::google::protobuf::MessageLite::ClassData* UpdatePostResponse::GetClassDa
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> UpdatePostResponse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 1, 0, 2> UpdatePostResponse::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_._has_bits_),
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     _class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -2409,6 +3348,9 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> UpdatePostResponse::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::UpdatePostResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
+    // .google.protobuf.Timestamp updated_at = 2 [json_name = "updatedAt"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.updated_at_)}},
     // uint32 id = 1 [json_name = "id"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdatePostResponse, _impl_.id_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.id_)}},
@@ -2416,11 +3358,14 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> UpdatePostResponse::_table_ = {
     65535, 65535
   }}, {{
     // uint32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.id_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.id_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
-  }},
-  // no aux_entries
-  {{
+    // .google.protobuf.Timestamp updated_at = 2 [json_name = "updatedAt"];
+    {PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.updated_at_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
   }},
 };
 
@@ -2431,7 +3376,13 @@ PROTOBUF_NOINLINE void UpdatePostResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    ABSL_DCHECK(_impl_.updated_at_ != nullptr);
+    _impl_.updated_at_->Clear();
+  }
   _impl_.id_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -2457,6 +3408,14 @@ PROTOBUF_NOINLINE void UpdatePostResponse::Clear() {
                 1, this_._internal_id(), target);
           }
 
+          cached_has_bits = this_._impl_._has_bits_[0];
+          // .google.protobuf.Timestamp updated_at = 2 [json_name = "updatedAt"];
+          if (cached_has_bits & 0x00000001u) {
+            target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+                2, *this_._impl_.updated_at_, this_._impl_.updated_at_->GetCachedSize(), target,
+                stream);
+          }
+
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
             target =
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2480,6 +3439,16 @@ PROTOBUF_NOINLINE void UpdatePostResponse::Clear() {
           // Prevent compiler warnings about cached_has_bits being unused
           (void)cached_has_bits;
 
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+           {
+            // .google.protobuf.Timestamp updated_at = 2 [json_name = "updatedAt"];
+            cached_has_bits =
+                this_._impl_._has_bits_[0];
+            if (cached_has_bits & 0x00000001u) {
+              total_size += 1 +
+                            ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.updated_at_);
+            }
+          }
            {
             // uint32 id = 1 [json_name = "id"];
             if (this_._internal_id() != 0) {
@@ -2494,14 +3463,26 @@ PROTOBUF_NOINLINE void UpdatePostResponse::Clear() {
 void UpdatePostResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<UpdatePostResponse*>(&to_msg);
   auto& from = static_cast<const UpdatePostResponse&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:blog.v1.UpdatePostResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    ABSL_DCHECK(from._impl_.updated_at_ != nullptr);
+    if (_this->_impl_.updated_at_ == nullptr) {
+      _this->_impl_.updated_at_ =
+          ::google::protobuf::Message::CopyConstruct<::google::protobuf::Timestamp>(arena, *from._impl_.updated_at_);
+    } else {
+      _this->_impl_.updated_at_->MergeFrom(*from._impl_.updated_at_);
+    }
+  }
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
   }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2516,7 +3497,13 @@ void UpdatePostResponse::CopyFrom(const UpdatePostResponse& from) {
 void UpdatePostResponse::InternalSwap(UpdatePostResponse* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.id_, other->_impl_.id_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.id_)
+      + sizeof(UpdatePostResponse::_impl_.id_)
+      - PROTOBUF_FIELD_OFFSET(UpdatePostResponse, _impl_.updated_at_)>(
+          reinterpret_cast<char*>(&_impl_.updated_at_),
+          reinterpret_cast<char*>(&other->_impl_.updated_at_));
 }
 
 ::google::protobuf::Metadata UpdatePostResponse::GetMetadata() const {
@@ -2748,7 +3735,12 @@ inline PROTOBUF_NDEBUG_INLINE DeletePostResponse::Impl_::Impl_(
 
 inline void DeletePostResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.id_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, id_),
+           0,
+           offsetof(Impl_, success_) -
+               offsetof(Impl_, id_) +
+               sizeof(Impl_::success_));
 }
 DeletePostResponse::~DeletePostResponse() {
   // @@protoc_insertion_point(destructor:blog.v1.DeletePostResponse)
@@ -2789,15 +3781,15 @@ const ::google::protobuf::MessageLite::ClassData* DeletePostResponse::GetClassDa
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> DeletePostResponse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> DeletePostResponse::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
+    2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     _class_data_.base(),
@@ -2807,6 +3799,9 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> DeletePostResponse::_table_ = {
     ::_pbi::TcParser::GetTable<::blog::v1::DeletePostResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
+    // bool success = 2 [json_name = "success"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(DeletePostResponse, _impl_.success_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(DeletePostResponse, _impl_.success_)}},
     // uint32 id = 1 [json_name = "id"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DeletePostResponse, _impl_.id_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(DeletePostResponse, _impl_.id_)}},
@@ -2816,6 +3811,9 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> DeletePostResponse::_table_ = {
     // uint32 id = 1 [json_name = "id"];
     {PROTOBUF_FIELD_OFFSET(DeletePostResponse, _impl_.id_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // bool success = 2 [json_name = "success"];
+    {PROTOBUF_FIELD_OFFSET(DeletePostResponse, _impl_.success_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
   }},
   // no aux_entries
   {{
@@ -2829,7 +3827,9 @@ PROTOBUF_NOINLINE void DeletePostResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.id_ = 0u;
+  ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.success_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.success_));
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -2855,6 +3855,13 @@ PROTOBUF_NOINLINE void DeletePostResponse::Clear() {
                 1, this_._internal_id(), target);
           }
 
+          // bool success = 2 [json_name = "success"];
+          if (this_._internal_success() != 0) {
+            target = stream->EnsureSpace(target);
+            target = ::_pbi::WireFormatLite::WriteBoolToArray(
+                2, this_._internal_success(), target);
+          }
+
           if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
             target =
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2878,11 +3885,16 @@ PROTOBUF_NOINLINE void DeletePostResponse::Clear() {
           // Prevent compiler warnings about cached_has_bits being unused
           (void)cached_has_bits;
 
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
            {
             // uint32 id = 1 [json_name = "id"];
             if (this_._internal_id() != 0) {
               total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
                   this_._internal_id());
+            }
+            // bool success = 2 [json_name = "success"];
+            if (this_._internal_success() != 0) {
+              total_size += 2;
             }
           }
           return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -2900,6 +3912,9 @@ void DeletePostResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, cons
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
   }
+  if (from._internal_success() != 0) {
+    _this->_impl_.success_ = from._impl_.success_;
+  }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2914,7 +3929,12 @@ void DeletePostResponse::CopyFrom(const DeletePostResponse& from) {
 void DeletePostResponse::InternalSwap(DeletePostResponse* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.id_, other->_impl_.id_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DeletePostResponse, _impl_.success_)
+      + sizeof(DeletePostResponse::_impl_.success_)
+      - PROTOBUF_FIELD_OFFSET(DeletePostResponse, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
 ::google::protobuf::Metadata DeletePostResponse::GetMetadata() const {

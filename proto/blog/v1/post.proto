@@ -4,10 +4,12 @@ package blog.v1;
 
 import "buf/validate/validate.proto";
 import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/pplmx/pb/blog/v1;blogv1";
 
 service PostService {
+  // 创建博客文章
   rpc CreatePost(CreatePostRequest) returns (CreatePostResponse) {
     option (google.api.http) = {
       post: "/api/v1/posts"
@@ -15,14 +17,17 @@ service PostService {
     };
   }
 
+  // 根据ID获取博客文章
   rpc GetPostByID(GetPostByIDRequest) returns (GetPostByIDResponse) {
     option (google.api.http) = {get: "/api/v1/posts/{id}"};
   }
 
+  // 列出所有博客文章
   rpc ListPosts(ListPostsRequest) returns (ListPostsResponse) {
     option (google.api.http) = {get: "/api/v1/posts"};
   }
 
+  // 更新博客文章
   rpc UpdatePost(UpdatePostRequest) returns (UpdatePostResponse) {
     option (google.api.http) = {
       put: "/api/v1/posts/{id}"
@@ -30,56 +35,101 @@ service PostService {
     };
   }
 
+  // 删除博客文章
   rpc DeletePost(DeletePostRequest) returns (DeletePostResponse) {
     option (google.api.http) = {delete: "/api/v1/posts/{id}"};
   }
 }
 
+// 创建文章请求
 message CreatePostRequest {
-  string title = 1 [(buf.validate.field).string.min_len = 1];
-  string content = 2 [(buf.validate.field).string.min_len = 1];
+  string title = 1 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 100
+  }];
+  string content = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 10000
+  }];
+  optional string author = 3;
+  optional string category = 4;
 }
 
+// 创建文章响应
 message CreatePostResponse {
   uint32 id = 1;
+  google.protobuf.Timestamp created_at = 2;
 }
 
+// 根据ID获取文章请求
 message GetPostByIDRequest {
   uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
 }
 
+// 根据ID获取文章响应
 message GetPostByIDResponse {
   uint32 id = 1;
   string title = 2;
   string content = 3;
+  optional string author = 4;
+  optional string category = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
 }
 
-message ListPostsRequest {}
+// 列出文章请求
+message ListPostsRequest {
+  optional string author = 1;
+  optional string category = 2;
+  uint32 page = 3 [(buf.validate.field).uint32.gte = 1];
+  uint32 page_size = 4 [(buf.validate.field).uint32 = {
+    gte: 1
+    lte: 100
+  }];
+}
 
+// 列出文章响应
 message ListPostsResponse {
   repeated Post posts = 1;
+  uint32 total_count = 2;
 
   message Post {
     uint32 id = 1;
     string title = 2;
     string content = 3;
+    optional string author = 4;
+    optional string category = 5;
+    google.protobuf.Timestamp created_at = 6;
   }
 }
 
+// 更新文章请求
 message UpdatePostRequest {
   uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
-  string title = 2;
-  string content = 3;
+  optional string title = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 100
+  }];
+  optional string content = 3 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 10000
+  }];
+  optional string category = 4;
 }
 
+// 更新文章响应
 message UpdatePostResponse {
   uint32 id = 1;
+  google.protobuf.Timestamp updated_at = 2;
 }
 
+// 删除文章请求
 message DeletePostRequest {
   uint32 id = 1 [(buf.validate.field).uint32.gt = 0];
 }
 
+// 删除文章响应
 message DeletePostResponse {
   uint32 id = 1;
+  bool success = 2;
 }

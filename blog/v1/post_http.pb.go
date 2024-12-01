@@ -26,10 +26,15 @@ const OperationPostServiceListPosts = "/blog.v1.PostService/ListPosts"
 const OperationPostServiceUpdatePost = "/blog.v1.PostService/UpdatePost"
 
 type PostServiceHTTPServer interface {
+	// CreatePost 创建博客文章
 	CreatePost(context.Context, *CreatePostRequest) (*CreatePostResponse, error)
+	// DeletePost 删除博客文章
 	DeletePost(context.Context, *DeletePostRequest) (*DeletePostResponse, error)
+	// GetPostByID 根据ID获取博客文章
 	GetPostByID(context.Context, *GetPostByIDRequest) (*GetPostByIDResponse, error)
+	// ListPosts 列出所有博客文章
 	ListPosts(context.Context, *ListPostsRequest) (*ListPostsResponse, error)
+	// UpdatePost 更新博客文章
 	UpdatePost(context.Context, *UpdatePostRequest) (*UpdatePostResponse, error)
 }
 

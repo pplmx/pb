@@ -36,6 +36,7 @@ class PostService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // 创建博客文章
     virtual ::grpc::Status CreatePost(::grpc::ClientContext* context, const ::blog::v1::CreatePostRequest& request, ::blog::v1::CreatePostResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::CreatePostResponse>> AsyncCreatePost(::grpc::ClientContext* context, const ::blog::v1::CreatePostRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::CreatePostResponse>>(AsyncCreatePostRaw(context, request, cq));
@@ -43,6 +44,7 @@ class PostService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::CreatePostResponse>> PrepareAsyncCreatePost(::grpc::ClientContext* context, const ::blog::v1::CreatePostRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::CreatePostResponse>>(PrepareAsyncCreatePostRaw(context, request, cq));
     }
+    // 根据ID获取博客文章
     virtual ::grpc::Status GetPostByID(::grpc::ClientContext* context, const ::blog::v1::GetPostByIDRequest& request, ::blog::v1::GetPostByIDResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::GetPostByIDResponse>> AsyncGetPostByID(::grpc::ClientContext* context, const ::blog::v1::GetPostByIDRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::GetPostByIDResponse>>(AsyncGetPostByIDRaw(context, request, cq));
@@ -50,6 +52,7 @@ class PostService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::GetPostByIDResponse>> PrepareAsyncGetPostByID(::grpc::ClientContext* context, const ::blog::v1::GetPostByIDRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::GetPostByIDResponse>>(PrepareAsyncGetPostByIDRaw(context, request, cq));
     }
+    // 列出所有博客文章
     virtual ::grpc::Status ListPosts(::grpc::ClientContext* context, const ::blog::v1::ListPostsRequest& request, ::blog::v1::ListPostsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::ListPostsResponse>> AsyncListPosts(::grpc::ClientContext* context, const ::blog::v1::ListPostsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::ListPostsResponse>>(AsyncListPostsRaw(context, request, cq));
@@ -57,6 +60,7 @@ class PostService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::ListPostsResponse>> PrepareAsyncListPosts(::grpc::ClientContext* context, const ::blog::v1::ListPostsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::ListPostsResponse>>(PrepareAsyncListPostsRaw(context, request, cq));
     }
+    // 更新博客文章
     virtual ::grpc::Status UpdatePost(::grpc::ClientContext* context, const ::blog::v1::UpdatePostRequest& request, ::blog::v1::UpdatePostResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::UpdatePostResponse>> AsyncUpdatePost(::grpc::ClientContext* context, const ::blog::v1::UpdatePostRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::UpdatePostResponse>>(AsyncUpdatePostRaw(context, request, cq));
@@ -64,6 +68,7 @@ class PostService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::UpdatePostResponse>> PrepareAsyncUpdatePost(::grpc::ClientContext* context, const ::blog::v1::UpdatePostRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::UpdatePostResponse>>(PrepareAsyncUpdatePostRaw(context, request, cq));
     }
+    // 删除博客文章
     virtual ::grpc::Status DeletePost(::grpc::ClientContext* context, const ::blog::v1::DeletePostRequest& request, ::blog::v1::DeletePostResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::DeletePostResponse>> AsyncDeletePost(::grpc::ClientContext* context, const ::blog::v1::DeletePostRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blog::v1::DeletePostResponse>>(AsyncDeletePostRaw(context, request, cq));
@@ -74,14 +79,19 @@ class PostService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // 创建博客文章
       virtual void CreatePost(::grpc::ClientContext* context, const ::blog::v1::CreatePostRequest* request, ::blog::v1::CreatePostResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreatePost(::grpc::ClientContext* context, const ::blog::v1::CreatePostRequest* request, ::blog::v1::CreatePostResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 根据ID获取博客文章
       virtual void GetPostByID(::grpc::ClientContext* context, const ::blog::v1::GetPostByIDRequest* request, ::blog::v1::GetPostByIDResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetPostByID(::grpc::ClientContext* context, const ::blog::v1::GetPostByIDRequest* request, ::blog::v1::GetPostByIDResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 列出所有博客文章
       virtual void ListPosts(::grpc::ClientContext* context, const ::blog::v1::ListPostsRequest* request, ::blog::v1::ListPostsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListPosts(::grpc::ClientContext* context, const ::blog::v1::ListPostsRequest* request, ::blog::v1::ListPostsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 更新博客文章
       virtual void UpdatePost(::grpc::ClientContext* context, const ::blog::v1::UpdatePostRequest* request, ::blog::v1::UpdatePostResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdatePost(::grpc::ClientContext* context, const ::blog::v1::UpdatePostRequest* request, ::blog::v1::UpdatePostResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 删除博客文章
       virtual void DeletePost(::grpc::ClientContext* context, const ::blog::v1::DeletePostRequest* request, ::blog::v1::DeletePostResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeletePost(::grpc::ClientContext* context, const ::blog::v1::DeletePostRequest* request, ::blog::v1::DeletePostResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -184,10 +194,15 @@ class PostService final {
    public:
     Service();
     virtual ~Service();
+    // 创建博客文章
     virtual ::grpc::Status CreatePost(::grpc::ServerContext* context, const ::blog::v1::CreatePostRequest* request, ::blog::v1::CreatePostResponse* response);
+    // 根据ID获取博客文章
     virtual ::grpc::Status GetPostByID(::grpc::ServerContext* context, const ::blog::v1::GetPostByIDRequest* request, ::blog::v1::GetPostByIDResponse* response);
+    // 列出所有博客文章
     virtual ::grpc::Status ListPosts(::grpc::ServerContext* context, const ::blog::v1::ListPostsRequest* request, ::blog::v1::ListPostsResponse* response);
+    // 更新博客文章
     virtual ::grpc::Status UpdatePost(::grpc::ServerContext* context, const ::blog::v1::UpdatePostRequest* request, ::blog::v1::UpdatePostResponse* response);
+    // 删除博客文章
     virtual ::grpc::Status DeletePost(::grpc::ServerContext* context, const ::blog::v1::DeletePostRequest* request, ::blog::v1::DeletePostResponse* response);
   };
   template <class BaseClass>

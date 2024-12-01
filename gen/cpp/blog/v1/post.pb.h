@@ -20,7 +20,6 @@
 #include "google/protobuf/io/coded_stream.h"
 #include "google/protobuf/arena.h"
 #include "google/protobuf/arenastring.h"
-#include "google/protobuf/generated_message_bases.h"
 #include "google/protobuf/generated_message_tctable_decl.h"
 #include "google/protobuf/generated_message_util.h"
 #include "google/protobuf/metadata_lite.h"
@@ -31,6 +30,7 @@
 #include "google/protobuf/unknown_field_set.h"
 #include "buf/validate/validate.pb.h"
 #include "google/api/annotations.pb.h"
+#include "google/protobuf/timestamp.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -100,194 +100,6 @@ namespace v1 {
 // ===================================================================
 
 
-// -------------------------------------------------------------------
-
-class UpdatePostResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:blog.v1.UpdatePostResponse) */ {
- public:
-  inline UpdatePostResponse() : UpdatePostResponse(nullptr) {}
-  ~UpdatePostResponse() PROTOBUF_FINAL;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR UpdatePostResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline UpdatePostResponse(const UpdatePostResponse& from) : UpdatePostResponse(nullptr, from) {}
-  inline UpdatePostResponse(UpdatePostResponse&& from) noexcept
-      : UpdatePostResponse(nullptr, std::move(from)) {}
-  inline UpdatePostResponse& operator=(const UpdatePostResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UpdatePostResponse& operator=(UpdatePostResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UpdatePostResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UpdatePostResponse* internal_default_instance() {
-    return reinterpret_cast<const UpdatePostResponse*>(
-        &_UpdatePostResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 8;
-  friend void swap(UpdatePostResponse& a, UpdatePostResponse& b) { a.Swap(&b); }
-  inline void Swap(UpdatePostResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UpdatePostResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  UpdatePostResponse* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
-    return ::google::protobuf::Message::DefaultConstruct<UpdatePostResponse>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const UpdatePostResponse& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const UpdatePostResponse& from) { UpdatePostResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* _InternalSerialize(
-      const MessageLite& msg, ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(UpdatePostResponse* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "blog.v1.UpdatePostResponse"; }
-
- protected:
-  explicit UpdatePostResponse(::google::protobuf::Arena* arena);
-  UpdatePostResponse(::google::protobuf::Arena* arena, const UpdatePostResponse& from);
-  UpdatePostResponse(::google::protobuf::Arena* arena, UpdatePostResponse&& from) noexcept
-      : UpdatePostResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
-  static const ::google::protobuf::Message::ClassDataFull _class_data_;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kIdFieldNumber = 1,
-  };
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id() ;
-  ::uint32_t id() const;
-  void set_id(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_id() const;
-  void _internal_set_id(::uint32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:blog.v1.UpdatePostResponse)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_UpdatePostResponse_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const UpdatePostResponse& from_msg);
-    ::uint32_t id_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
-};
 // -------------------------------------------------------------------
 
 class UpdatePostRequest final : public ::google::protobuf::Message
@@ -433,9 +245,11 @@ class UpdatePostRequest final : public ::google::protobuf::Message
   enum : int {
     kTitleFieldNumber = 2,
     kContentFieldNumber = 3,
+    kCategoryFieldNumber = 4,
     kIdFieldNumber = 1,
   };
-  // string title = 2 [json_name = "title"];
+  // optional string title = 2 [json_name = "title", (.buf.validate.field) = {
+  bool has_title() const;
   void clear_title() ;
   const std::string& title() const;
   template <typename Arg_ = const std::string&, typename... Args_>
@@ -451,7 +265,8 @@ class UpdatePostRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_title();
 
   public:
-  // string content = 3 [json_name = "content"];
+  // optional string content = 3 [json_name = "content", (.buf.validate.field) = {
+  bool has_content() const;
   void clear_content() ;
   const std::string& content() const;
   template <typename Arg_ = const std::string&, typename... Args_>
@@ -465,6 +280,23 @@ class UpdatePostRequest final : public ::google::protobuf::Message
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(
       const std::string& value);
   std::string* _internal_mutable_content();
+
+  public:
+  // optional string category = 4 [json_name = "category"];
+  bool has_category() const;
+  void clear_category() ;
+  const std::string& category() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_category(Arg_&& arg, Args_... args);
+  std::string* mutable_category();
+  PROTOBUF_NODISCARD std::string* release_category();
+  void set_allocated_category(std::string* value);
+
+  private:
+  const std::string& _internal_category() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_category(
+      const std::string& value);
+  std::string* _internal_mutable_category();
 
   public:
   // uint32 id = 1 [json_name = "id", (.buf.validate.field) = {
@@ -482,8 +314,8 @@ class UpdatePostRequest final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 0,
-      46, 2>
+      2, 4, 0,
+      54, 2>
       _table_;
 
   static constexpr const void* _raw_default_instance_ =
@@ -503,10 +335,12 @@ class UpdatePostRequest final : public ::google::protobuf::Message
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const UpdatePostRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr content_;
+    ::google::protobuf::internal::ArenaStringPtr category_;
     ::uint32_t id_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -514,234 +348,11 @@ class UpdatePostRequest final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class ListPostsResponse_Post final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:blog.v1.ListPostsResponse.Post) */ {
- public:
-  inline ListPostsResponse_Post() : ListPostsResponse_Post(nullptr) {}
-  ~ListPostsResponse_Post() PROTOBUF_FINAL;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ListPostsResponse_Post(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline ListPostsResponse_Post(const ListPostsResponse_Post& from) : ListPostsResponse_Post(nullptr, from) {}
-  inline ListPostsResponse_Post(ListPostsResponse_Post&& from) noexcept
-      : ListPostsResponse_Post(nullptr, std::move(from)) {}
-  inline ListPostsResponse_Post& operator=(const ListPostsResponse_Post& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ListPostsResponse_Post& operator=(ListPostsResponse_Post&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ListPostsResponse_Post& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ListPostsResponse_Post* internal_default_instance() {
-    return reinterpret_cast<const ListPostsResponse_Post*>(
-        &_ListPostsResponse_Post_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 5;
-  friend void swap(ListPostsResponse_Post& a, ListPostsResponse_Post& b) { a.Swap(&b); }
-  inline void Swap(ListPostsResponse_Post* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ListPostsResponse_Post* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ListPostsResponse_Post* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
-    return ::google::protobuf::Message::DefaultConstruct<ListPostsResponse_Post>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ListPostsResponse_Post& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ListPostsResponse_Post& from) { ListPostsResponse_Post::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* _InternalSerialize(
-      const MessageLite& msg, ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(ListPostsResponse_Post* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "blog.v1.ListPostsResponse.Post"; }
-
- protected:
-  explicit ListPostsResponse_Post(::google::protobuf::Arena* arena);
-  ListPostsResponse_Post(::google::protobuf::Arena* arena, const ListPostsResponse_Post& from);
-  ListPostsResponse_Post(::google::protobuf::Arena* arena, ListPostsResponse_Post&& from) noexcept
-      : ListPostsResponse_Post(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
-  static const ::google::protobuf::Message::ClassDataFull _class_data_;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kTitleFieldNumber = 2,
-    kContentFieldNumber = 3,
-    kIdFieldNumber = 1,
-  };
-  // string title = 2 [json_name = "title"];
-  void clear_title() ;
-  const std::string& title() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_title(Arg_&& arg, Args_... args);
-  std::string* mutable_title();
-  PROTOBUF_NODISCARD std::string* release_title();
-  void set_allocated_title(std::string* value);
-
-  private:
-  const std::string& _internal_title() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_title(
-      const std::string& value);
-  std::string* _internal_mutable_title();
-
-  public:
-  // string content = 3 [json_name = "content"];
-  void clear_content() ;
-  const std::string& content() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_content(Arg_&& arg, Args_... args);
-  std::string* mutable_content();
-  PROTOBUF_NODISCARD std::string* release_content();
-  void set_allocated_content(std::string* value);
-
-  private:
-  const std::string& _internal_content() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(
-      const std::string& value);
-  std::string* _internal_mutable_content();
-
-  public:
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id() ;
-  ::uint32_t id() const;
-  void set_id(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_id() const;
-  void _internal_set_id(::uint32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:blog.v1.ListPostsResponse.Post)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 0,
-      51, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_ListPostsResponse_Post_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const ListPostsResponse_Post& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr title_;
-    ::google::protobuf::internal::ArenaStringPtr content_;
-    ::uint32_t id_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ListPostsRequest final : public ::google::protobuf::internal::ZeroFieldsBase
+class ListPostsRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:blog.v1.ListPostsRequest) */ {
  public:
   inline ListPostsRequest() : ListPostsRequest(nullptr) {}
+  ~ListPostsRequest() PROTOBUF_FINAL;
   template <typename = void>
   explicit PROTOBUF_CONSTEXPR ListPostsRequest(
       ::google::protobuf::internal::ConstantInitialized);
@@ -815,156 +426,12 @@ class ListPostsRequest final : public ::google::protobuf::internal::ZeroFieldsBa
   // implements Message ----------------------------------------------
 
   ListPostsRequest* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
-    return ::google::protobuf::internal::ZeroFieldsBase::DefaultConstruct<ListPostsRequest>(arena);
-  }
-  using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const ListPostsRequest& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
-  }
-  using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const ListPostsRequest& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
-  }
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "blog.v1.ListPostsRequest"; }
-
- protected:
-  explicit ListPostsRequest(::google::protobuf::Arena* arena);
-  ListPostsRequest(::google::protobuf::Arena* arena, const ListPostsRequest& from);
-  ListPostsRequest(::google::protobuf::Arena* arena, ListPostsRequest&& from) noexcept
-      : ListPostsRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ZeroFieldsBase::ClassData* GetClassData() const PROTOBUF_FINAL;
-  static const ::google::protobuf::internal::ZeroFieldsBase::ClassDataFull _class_data_;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  // @@protoc_insertion_point(class_scope:blog.v1.ListPostsRequest)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      0, 0, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_ListPostsRequest_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const ListPostsRequest& from_msg);
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
-};
-// -------------------------------------------------------------------
-
-class GetPostByIDResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:blog.v1.GetPostByIDResponse) */ {
- public:
-  inline GetPostByIDResponse() : GetPostByIDResponse(nullptr) {}
-  ~GetPostByIDResponse() PROTOBUF_FINAL;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR GetPostByIDResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline GetPostByIDResponse(const GetPostByIDResponse& from) : GetPostByIDResponse(nullptr, from) {}
-  inline GetPostByIDResponse(GetPostByIDResponse&& from) noexcept
-      : GetPostByIDResponse(nullptr, std::move(from)) {}
-  inline GetPostByIDResponse& operator=(const GetPostByIDResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetPostByIDResponse& operator=(GetPostByIDResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const GetPostByIDResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const GetPostByIDResponse* internal_default_instance() {
-    return reinterpret_cast<const GetPostByIDResponse*>(
-        &_GetPostByIDResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 3;
-  friend void swap(GetPostByIDResponse& a, GetPostByIDResponse& b) { a.Swap(&b); }
-  inline void Swap(GetPostByIDResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetPostByIDResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  GetPostByIDResponse* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
-    return ::google::protobuf::Message::DefaultConstruct<GetPostByIDResponse>(arena);
+    return ::google::protobuf::Message::DefaultConstruct<ListPostsRequest>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const GetPostByIDResponse& from);
+  void CopyFrom(const ListPostsRequest& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const GetPostByIDResponse& from) { GetPostByIDResponse::MergeImpl(*this, from); }
+  void MergeFrom(const ListPostsRequest& from) { ListPostsRequest::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(
@@ -1001,16 +468,16 @@ class GetPostByIDResponse final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* arena);
   void SharedDtor();
-  void InternalSwap(GetPostByIDResponse* other);
+  void InternalSwap(ListPostsRequest* other);
  private:
   friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "blog.v1.GetPostByIDResponse"; }
+  static ::absl::string_view FullMessageName() { return "blog.v1.ListPostsRequest"; }
 
  protected:
-  explicit GetPostByIDResponse(::google::protobuf::Arena* arena);
-  GetPostByIDResponse(::google::protobuf::Arena* arena, const GetPostByIDResponse& from);
-  GetPostByIDResponse(::google::protobuf::Arena* arena, GetPostByIDResponse&& from) noexcept
-      : GetPostByIDResponse(arena) {
+  explicit ListPostsRequest(::google::protobuf::Arena* arena);
+  ListPostsRequest(::google::protobuf::Arena* arena, const ListPostsRequest& from);
+  ListPostsRequest(::google::protobuf::Arena* arena, ListPostsRequest&& from) noexcept
+      : ListPostsRequest(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
@@ -1022,63 +489,76 @@ class GetPostByIDResponse final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kTitleFieldNumber = 2,
-    kContentFieldNumber = 3,
-    kIdFieldNumber = 1,
+    kAuthorFieldNumber = 1,
+    kCategoryFieldNumber = 2,
+    kPageFieldNumber = 3,
+    kPageSizeFieldNumber = 4,
   };
-  // string title = 2 [json_name = "title"];
-  void clear_title() ;
-  const std::string& title() const;
+  // optional string author = 1 [json_name = "author"];
+  bool has_author() const;
+  void clear_author() ;
+  const std::string& author() const;
   template <typename Arg_ = const std::string&, typename... Args_>
-  void set_title(Arg_&& arg, Args_... args);
-  std::string* mutable_title();
-  PROTOBUF_NODISCARD std::string* release_title();
-  void set_allocated_title(std::string* value);
+  void set_author(Arg_&& arg, Args_... args);
+  std::string* mutable_author();
+  PROTOBUF_NODISCARD std::string* release_author();
+  void set_allocated_author(std::string* value);
 
   private:
-  const std::string& _internal_title() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_title(
+  const std::string& _internal_author() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_author(
       const std::string& value);
-  std::string* _internal_mutable_title();
+  std::string* _internal_mutable_author();
 
   public:
-  // string content = 3 [json_name = "content"];
-  void clear_content() ;
-  const std::string& content() const;
+  // optional string category = 2 [json_name = "category"];
+  bool has_category() const;
+  void clear_category() ;
+  const std::string& category() const;
   template <typename Arg_ = const std::string&, typename... Args_>
-  void set_content(Arg_&& arg, Args_... args);
-  std::string* mutable_content();
-  PROTOBUF_NODISCARD std::string* release_content();
-  void set_allocated_content(std::string* value);
+  void set_category(Arg_&& arg, Args_... args);
+  std::string* mutable_category();
+  PROTOBUF_NODISCARD std::string* release_category();
+  void set_allocated_category(std::string* value);
 
   private:
-  const std::string& _internal_content() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(
+  const std::string& _internal_category() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_category(
       const std::string& value);
-  std::string* _internal_mutable_content();
+  std::string* _internal_mutable_category();
 
   public:
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id() ;
-  ::uint32_t id() const;
-  void set_id(::uint32_t value);
+  // uint32 page = 3 [json_name = "page", (.buf.validate.field) = {
+  void clear_page() ;
+  ::uint32_t page() const;
+  void set_page(::uint32_t value);
 
   private:
-  ::uint32_t _internal_id() const;
-  void _internal_set_id(::uint32_t value);
+  ::uint32_t _internal_page() const;
+  void _internal_set_page(::uint32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:blog.v1.GetPostByIDResponse)
+  // uint32 page_size = 4 [json_name = "pageSize", (.buf.validate.field) = {
+  void clear_page_size() ;
+  ::uint32_t page_size() const;
+  void set_page_size(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_page_size() const;
+  void _internal_set_page_size(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:blog.v1.ListPostsRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 0,
-      48, 2>
+      2, 4, 0,
+      47, 2>
       _table_;
 
   static constexpr const void* _raw_default_instance_ =
-      &_GetPostByIDResponse_default_instance_;
+      &_ListPostsRequest_default_instance_;
 
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -1093,11 +573,13 @@ class GetPostByIDResponse final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena);
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from,
-                          const GetPostByIDResponse& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr title_;
-    ::google::protobuf::internal::ArenaStringPtr content_;
-    ::uint32_t id_;
+                          const ListPostsRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr author_;
+    ::google::protobuf::internal::ArenaStringPtr category_;
+    ::uint32_t page_;
+    ::uint32_t page_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1435,6 +917,7 @@ class DeletePostResponse final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kIdFieldNumber = 1,
+    kSuccessFieldNumber = 2,
   };
   // uint32 id = 1 [json_name = "id"];
   void clear_id() ;
@@ -1446,12 +929,22 @@ class DeletePostResponse final : public ::google::protobuf::Message
   void _internal_set_id(::uint32_t value);
 
   public:
+  // bool success = 2 [json_name = "success"];
+  void clear_success() ;
+  bool success() const;
+  void set_success(bool value);
+
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+
+  public:
   // @@protoc_insertion_point(class_scope:blog.v1.DeletePostResponse)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 0,
+      1, 2, 0,
       0, 2>
       _table_;
 
@@ -1473,6 +966,7 @@ class DeletePostResponse final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const DeletePostResponse& from_msg);
     ::uint32_t id_;
+    bool success_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1669,194 +1163,6 @@ class DeletePostRequest final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class CreatePostResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:blog.v1.CreatePostResponse) */ {
- public:
-  inline CreatePostResponse() : CreatePostResponse(nullptr) {}
-  ~CreatePostResponse() PROTOBUF_FINAL;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CreatePostResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline CreatePostResponse(const CreatePostResponse& from) : CreatePostResponse(nullptr, from) {}
-  inline CreatePostResponse(CreatePostResponse&& from) noexcept
-      : CreatePostResponse(nullptr, std::move(from)) {}
-  inline CreatePostResponse& operator=(const CreatePostResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreatePostResponse& operator=(CreatePostResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CreatePostResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CreatePostResponse* internal_default_instance() {
-    return reinterpret_cast<const CreatePostResponse*>(
-        &_CreatePostResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 1;
-  friend void swap(CreatePostResponse& a, CreatePostResponse& b) { a.Swap(&b); }
-  inline void Swap(CreatePostResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreatePostResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CreatePostResponse* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
-    return ::google::protobuf::Message::DefaultConstruct<CreatePostResponse>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const CreatePostResponse& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CreatePostResponse& from) { CreatePostResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* _InternalSerialize(
-      const MessageLite& msg, ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(CreatePostResponse* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "blog.v1.CreatePostResponse"; }
-
- protected:
-  explicit CreatePostResponse(::google::protobuf::Arena* arena);
-  CreatePostResponse(::google::protobuf::Arena* arena, const CreatePostResponse& from);
-  CreatePostResponse(::google::protobuf::Arena* arena, CreatePostResponse&& from) noexcept
-      : CreatePostResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
-  static const ::google::protobuf::Message::ClassDataFull _class_data_;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kIdFieldNumber = 1,
-  };
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id() ;
-  ::uint32_t id() const;
-  void set_id(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_id() const;
-  void _internal_set_id(::uint32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:blog.v1.CreatePostResponse)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_CreatePostResponse_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const CreatePostResponse& from_msg);
-    ::uint32_t id_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
-};
-// -------------------------------------------------------------------
-
 class CreatePostRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:blog.v1.CreatePostRequest) */ {
  public:
@@ -2000,6 +1306,8 @@ class CreatePostRequest final : public ::google::protobuf::Message
   enum : int {
     kTitleFieldNumber = 1,
     kContentFieldNumber = 2,
+    kAuthorFieldNumber = 3,
+    kCategoryFieldNumber = 4,
   };
   // string title = 1 [json_name = "title", (.buf.validate.field) = {
   void clear_title() ;
@@ -2033,13 +1341,47 @@ class CreatePostRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_content();
 
   public:
+  // optional string author = 3 [json_name = "author"];
+  bool has_author() const;
+  void clear_author() ;
+  const std::string& author() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_author(Arg_&& arg, Args_... args);
+  std::string* mutable_author();
+  PROTOBUF_NODISCARD std::string* release_author();
+  void set_allocated_author(std::string* value);
+
+  private:
+  const std::string& _internal_author() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_author(
+      const std::string& value);
+  std::string* _internal_mutable_author();
+
+  public:
+  // optional string category = 4 [json_name = "category"];
+  bool has_category() const;
+  void clear_category() ;
+  const std::string& category() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_category(Arg_&& arg, Args_... args);
+  std::string* mutable_category();
+  PROTOBUF_NODISCARD std::string* release_category();
+  void set_allocated_category(std::string* value);
+
+  private:
+  const std::string& _internal_category() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_category(
+      const std::string& value);
+  std::string* _internal_mutable_category();
+
+  public:
   // @@protoc_insertion_point(class_scope:blog.v1.CreatePostRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      1, 2, 0,
-      46, 2>
+      2, 4, 0,
+      60, 2>
       _table_;
 
   static constexpr const void* _raw_default_instance_ =
@@ -2059,9 +1401,1001 @@ class CreatePostRequest final : public ::google::protobuf::Message
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const CreatePostRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr content_;
+    ::google::protobuf::internal::ArenaStringPtr author_;
+    ::google::protobuf::internal::ArenaStringPtr category_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdatePostResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:blog.v1.UpdatePostResponse) */ {
+ public:
+  inline UpdatePostResponse() : UpdatePostResponse(nullptr) {}
+  ~UpdatePostResponse() PROTOBUF_FINAL;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR UpdatePostResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline UpdatePostResponse(const UpdatePostResponse& from) : UpdatePostResponse(nullptr, from) {}
+  inline UpdatePostResponse(UpdatePostResponse&& from) noexcept
+      : UpdatePostResponse(nullptr, std::move(from)) {}
+  inline UpdatePostResponse& operator=(const UpdatePostResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdatePostResponse& operator=(UpdatePostResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdatePostResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdatePostResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdatePostResponse*>(
+        &_UpdatePostResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 8;
+  friend void swap(UpdatePostResponse& a, UpdatePostResponse& b) { a.Swap(&b); }
+  inline void Swap(UpdatePostResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdatePostResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UpdatePostResponse* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
+    return ::google::protobuf::Message::DefaultConstruct<UpdatePostResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const UpdatePostResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const UpdatePostResponse& from) { UpdatePostResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* _InternalSerialize(
+      const MessageLite& msg, ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(UpdatePostResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "blog.v1.UpdatePostResponse"; }
+
+ protected:
+  explicit UpdatePostResponse(::google::protobuf::Arena* arena);
+  UpdatePostResponse(::google::protobuf::Arena* arena, const UpdatePostResponse& from);
+  UpdatePostResponse(::google::protobuf::Arena* arena, UpdatePostResponse&& from) noexcept
+      : UpdatePostResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
+  static const ::google::protobuf::Message::ClassDataFull _class_data_;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kUpdatedAtFieldNumber = 2,
+    kIdFieldNumber = 1,
+  };
+  // .google.protobuf.Timestamp updated_at = 2 [json_name = "updatedAt"];
+  bool has_updated_at() const;
+  void clear_updated_at() ;
+  const ::google::protobuf::Timestamp& updated_at() const;
+  PROTOBUF_NODISCARD ::google::protobuf::Timestamp* release_updated_at();
+  ::google::protobuf::Timestamp* mutable_updated_at();
+  void set_allocated_updated_at(::google::protobuf::Timestamp* value);
+  void unsafe_arena_set_allocated_updated_at(::google::protobuf::Timestamp* value);
+  ::google::protobuf::Timestamp* unsafe_arena_release_updated_at();
+
+  private:
+  const ::google::protobuf::Timestamp& _internal_updated_at() const;
+  ::google::protobuf::Timestamp* _internal_mutable_updated_at();
+
+  public:
+  // uint32 id = 1 [json_name = "id"];
+  void clear_id() ;
+  ::uint32_t id() const;
+  void set_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_id() const;
+  void _internal_set_id(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:blog.v1.UpdatePostResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 1,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_UpdatePostResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const UpdatePostResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::Timestamp* updated_at_;
+    ::uint32_t id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListPostsResponse_Post final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:blog.v1.ListPostsResponse.Post) */ {
+ public:
+  inline ListPostsResponse_Post() : ListPostsResponse_Post(nullptr) {}
+  ~ListPostsResponse_Post() PROTOBUF_FINAL;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ListPostsResponse_Post(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline ListPostsResponse_Post(const ListPostsResponse_Post& from) : ListPostsResponse_Post(nullptr, from) {}
+  inline ListPostsResponse_Post(ListPostsResponse_Post&& from) noexcept
+      : ListPostsResponse_Post(nullptr, std::move(from)) {}
+  inline ListPostsResponse_Post& operator=(const ListPostsResponse_Post& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListPostsResponse_Post& operator=(ListPostsResponse_Post&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListPostsResponse_Post& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListPostsResponse_Post* internal_default_instance() {
+    return reinterpret_cast<const ListPostsResponse_Post*>(
+        &_ListPostsResponse_Post_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 5;
+  friend void swap(ListPostsResponse_Post& a, ListPostsResponse_Post& b) { a.Swap(&b); }
+  inline void Swap(ListPostsResponse_Post* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListPostsResponse_Post* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ListPostsResponse_Post* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
+    return ::google::protobuf::Message::DefaultConstruct<ListPostsResponse_Post>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ListPostsResponse_Post& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ListPostsResponse_Post& from) { ListPostsResponse_Post::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* _InternalSerialize(
+      const MessageLite& msg, ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(ListPostsResponse_Post* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "blog.v1.ListPostsResponse.Post"; }
+
+ protected:
+  explicit ListPostsResponse_Post(::google::protobuf::Arena* arena);
+  ListPostsResponse_Post(::google::protobuf::Arena* arena, const ListPostsResponse_Post& from);
+  ListPostsResponse_Post(::google::protobuf::Arena* arena, ListPostsResponse_Post&& from) noexcept
+      : ListPostsResponse_Post(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
+  static const ::google::protobuf::Message::ClassDataFull _class_data_;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kTitleFieldNumber = 2,
+    kContentFieldNumber = 3,
+    kAuthorFieldNumber = 4,
+    kCategoryFieldNumber = 5,
+    kCreatedAtFieldNumber = 6,
+    kIdFieldNumber = 1,
+  };
+  // string title = 2 [json_name = "title"];
+  void clear_title() ;
+  const std::string& title() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_title(Arg_&& arg, Args_... args);
+  std::string* mutable_title();
+  PROTOBUF_NODISCARD std::string* release_title();
+  void set_allocated_title(std::string* value);
+
+  private:
+  const std::string& _internal_title() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_title(
+      const std::string& value);
+  std::string* _internal_mutable_title();
+
+  public:
+  // string content = 3 [json_name = "content"];
+  void clear_content() ;
+  const std::string& content() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_content(Arg_&& arg, Args_... args);
+  std::string* mutable_content();
+  PROTOBUF_NODISCARD std::string* release_content();
+  void set_allocated_content(std::string* value);
+
+  private:
+  const std::string& _internal_content() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(
+      const std::string& value);
+  std::string* _internal_mutable_content();
+
+  public:
+  // optional string author = 4 [json_name = "author"];
+  bool has_author() const;
+  void clear_author() ;
+  const std::string& author() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_author(Arg_&& arg, Args_... args);
+  std::string* mutable_author();
+  PROTOBUF_NODISCARD std::string* release_author();
+  void set_allocated_author(std::string* value);
+
+  private:
+  const std::string& _internal_author() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_author(
+      const std::string& value);
+  std::string* _internal_mutable_author();
+
+  public:
+  // optional string category = 5 [json_name = "category"];
+  bool has_category() const;
+  void clear_category() ;
+  const std::string& category() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_category(Arg_&& arg, Args_... args);
+  std::string* mutable_category();
+  PROTOBUF_NODISCARD std::string* release_category();
+  void set_allocated_category(std::string* value);
+
+  private:
+  const std::string& _internal_category() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_category(
+      const std::string& value);
+  std::string* _internal_mutable_category();
+
+  public:
+  // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+  bool has_created_at() const;
+  void clear_created_at() ;
+  const ::google::protobuf::Timestamp& created_at() const;
+  PROTOBUF_NODISCARD ::google::protobuf::Timestamp* release_created_at();
+  ::google::protobuf::Timestamp* mutable_created_at();
+  void set_allocated_created_at(::google::protobuf::Timestamp* value);
+  void unsafe_arena_set_allocated_created_at(::google::protobuf::Timestamp* value);
+  ::google::protobuf::Timestamp* unsafe_arena_release_created_at();
+
+  private:
+  const ::google::protobuf::Timestamp& _internal_created_at() const;
+  ::google::protobuf::Timestamp* _internal_mutable_created_at();
+
+  public:
+  // uint32 id = 1 [json_name = "id"];
+  void clear_id() ;
+  ::uint32_t id() const;
+  void set_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_id() const;
+  void _internal_set_id(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:blog.v1.ListPostsResponse.Post)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 6, 1,
+      65, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_ListPostsResponse_Post_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const ListPostsResponse_Post& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr title_;
+    ::google::protobuf::internal::ArenaStringPtr content_;
+    ::google::protobuf::internal::ArenaStringPtr author_;
+    ::google::protobuf::internal::ArenaStringPtr category_;
+    ::google::protobuf::Timestamp* created_at_;
+    ::uint32_t id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetPostByIDResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:blog.v1.GetPostByIDResponse) */ {
+ public:
+  inline GetPostByIDResponse() : GetPostByIDResponse(nullptr) {}
+  ~GetPostByIDResponse() PROTOBUF_FINAL;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR GetPostByIDResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline GetPostByIDResponse(const GetPostByIDResponse& from) : GetPostByIDResponse(nullptr, from) {}
+  inline GetPostByIDResponse(GetPostByIDResponse&& from) noexcept
+      : GetPostByIDResponse(nullptr, std::move(from)) {}
+  inline GetPostByIDResponse& operator=(const GetPostByIDResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPostByIDResponse& operator=(GetPostByIDResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetPostByIDResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetPostByIDResponse* internal_default_instance() {
+    return reinterpret_cast<const GetPostByIDResponse*>(
+        &_GetPostByIDResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(GetPostByIDResponse& a, GetPostByIDResponse& b) { a.Swap(&b); }
+  inline void Swap(GetPostByIDResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPostByIDResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetPostByIDResponse* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
+    return ::google::protobuf::Message::DefaultConstruct<GetPostByIDResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const GetPostByIDResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const GetPostByIDResponse& from) { GetPostByIDResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* _InternalSerialize(
+      const MessageLite& msg, ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(GetPostByIDResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "blog.v1.GetPostByIDResponse"; }
+
+ protected:
+  explicit GetPostByIDResponse(::google::protobuf::Arena* arena);
+  GetPostByIDResponse(::google::protobuf::Arena* arena, const GetPostByIDResponse& from);
+  GetPostByIDResponse(::google::protobuf::Arena* arena, GetPostByIDResponse&& from) noexcept
+      : GetPostByIDResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
+  static const ::google::protobuf::Message::ClassDataFull _class_data_;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kTitleFieldNumber = 2,
+    kContentFieldNumber = 3,
+    kAuthorFieldNumber = 4,
+    kCategoryFieldNumber = 5,
+    kCreatedAtFieldNumber = 6,
+    kUpdatedAtFieldNumber = 7,
+    kIdFieldNumber = 1,
+  };
+  // string title = 2 [json_name = "title"];
+  void clear_title() ;
+  const std::string& title() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_title(Arg_&& arg, Args_... args);
+  std::string* mutable_title();
+  PROTOBUF_NODISCARD std::string* release_title();
+  void set_allocated_title(std::string* value);
+
+  private:
+  const std::string& _internal_title() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_title(
+      const std::string& value);
+  std::string* _internal_mutable_title();
+
+  public:
+  // string content = 3 [json_name = "content"];
+  void clear_content() ;
+  const std::string& content() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_content(Arg_&& arg, Args_... args);
+  std::string* mutable_content();
+  PROTOBUF_NODISCARD std::string* release_content();
+  void set_allocated_content(std::string* value);
+
+  private:
+  const std::string& _internal_content() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_content(
+      const std::string& value);
+  std::string* _internal_mutable_content();
+
+  public:
+  // optional string author = 4 [json_name = "author"];
+  bool has_author() const;
+  void clear_author() ;
+  const std::string& author() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_author(Arg_&& arg, Args_... args);
+  std::string* mutable_author();
+  PROTOBUF_NODISCARD std::string* release_author();
+  void set_allocated_author(std::string* value);
+
+  private:
+  const std::string& _internal_author() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_author(
+      const std::string& value);
+  std::string* _internal_mutable_author();
+
+  public:
+  // optional string category = 5 [json_name = "category"];
+  bool has_category() const;
+  void clear_category() ;
+  const std::string& category() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_category(Arg_&& arg, Args_... args);
+  std::string* mutable_category();
+  PROTOBUF_NODISCARD std::string* release_category();
+  void set_allocated_category(std::string* value);
+
+  private:
+  const std::string& _internal_category() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_category(
+      const std::string& value);
+  std::string* _internal_mutable_category();
+
+  public:
+  // .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+  bool has_created_at() const;
+  void clear_created_at() ;
+  const ::google::protobuf::Timestamp& created_at() const;
+  PROTOBUF_NODISCARD ::google::protobuf::Timestamp* release_created_at();
+  ::google::protobuf::Timestamp* mutable_created_at();
+  void set_allocated_created_at(::google::protobuf::Timestamp* value);
+  void unsafe_arena_set_allocated_created_at(::google::protobuf::Timestamp* value);
+  ::google::protobuf::Timestamp* unsafe_arena_release_created_at();
+
+  private:
+  const ::google::protobuf::Timestamp& _internal_created_at() const;
+  ::google::protobuf::Timestamp* _internal_mutable_created_at();
+
+  public:
+  // .google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];
+  bool has_updated_at() const;
+  void clear_updated_at() ;
+  const ::google::protobuf::Timestamp& updated_at() const;
+  PROTOBUF_NODISCARD ::google::protobuf::Timestamp* release_updated_at();
+  ::google::protobuf::Timestamp* mutable_updated_at();
+  void set_allocated_updated_at(::google::protobuf::Timestamp* value);
+  void unsafe_arena_set_allocated_updated_at(::google::protobuf::Timestamp* value);
+  ::google::protobuf::Timestamp* unsafe_arena_release_updated_at();
+
+  private:
+  const ::google::protobuf::Timestamp& _internal_updated_at() const;
+  ::google::protobuf::Timestamp* _internal_mutable_updated_at();
+
+  public:
+  // uint32 id = 1 [json_name = "id"];
+  void clear_id() ;
+  ::uint32_t id() const;
+  void set_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_id() const;
+  void _internal_set_id(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:blog.v1.GetPostByIDResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 7, 2,
+      62, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_GetPostByIDResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const GetPostByIDResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr title_;
+    ::google::protobuf::internal::ArenaStringPtr content_;
+    ::google::protobuf::internal::ArenaStringPtr author_;
+    ::google::protobuf::internal::ArenaStringPtr category_;
+    ::google::protobuf::Timestamp* created_at_;
+    ::google::protobuf::Timestamp* updated_at_;
+    ::uint32_t id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_blog_2fv1_2fpost_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreatePostResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:blog.v1.CreatePostResponse) */ {
+ public:
+  inline CreatePostResponse() : CreatePostResponse(nullptr) {}
+  ~CreatePostResponse() PROTOBUF_FINAL;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR CreatePostResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline CreatePostResponse(const CreatePostResponse& from) : CreatePostResponse(nullptr, from) {}
+  inline CreatePostResponse(CreatePostResponse&& from) noexcept
+      : CreatePostResponse(nullptr, std::move(from)) {}
+  inline CreatePostResponse& operator=(const CreatePostResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreatePostResponse& operator=(CreatePostResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreatePostResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreatePostResponse* internal_default_instance() {
+    return reinterpret_cast<const CreatePostResponse*>(
+        &_CreatePostResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 1;
+  friend void swap(CreatePostResponse& a, CreatePostResponse& b) { a.Swap(&b); }
+  inline void Swap(CreatePostResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreatePostResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CreatePostResponse* New(::google::protobuf::Arena* arena = nullptr) const PROTOBUF_FINAL {
+    return ::google::protobuf::Message::DefaultConstruct<CreatePostResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const CreatePostResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const CreatePostResponse& from) { CreatePostResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* _InternalSerialize(
+      const MessageLite& msg, ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(CreatePostResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "blog.v1.CreatePostResponse"; }
+
+ protected:
+  explicit CreatePostResponse(::google::protobuf::Arena* arena);
+  CreatePostResponse(::google::protobuf::Arena* arena, const CreatePostResponse& from);
+  CreatePostResponse(::google::protobuf::Arena* arena, CreatePostResponse&& from) noexcept
+      : CreatePostResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const PROTOBUF_FINAL;
+  static const ::google::protobuf::Message::ClassDataFull _class_data_;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kCreatedAtFieldNumber = 2,
+    kIdFieldNumber = 1,
+  };
+  // .google.protobuf.Timestamp created_at = 2 [json_name = "createdAt"];
+  bool has_created_at() const;
+  void clear_created_at() ;
+  const ::google::protobuf::Timestamp& created_at() const;
+  PROTOBUF_NODISCARD ::google::protobuf::Timestamp* release_created_at();
+  ::google::protobuf::Timestamp* mutable_created_at();
+  void set_allocated_created_at(::google::protobuf::Timestamp* value);
+  void unsafe_arena_set_allocated_created_at(::google::protobuf::Timestamp* value);
+  ::google::protobuf::Timestamp* unsafe_arena_release_created_at();
+
+  private:
+  const ::google::protobuf::Timestamp& _internal_created_at() const;
+  ::google::protobuf::Timestamp* _internal_mutable_created_at();
+
+  public:
+  // uint32 id = 1 [json_name = "id"];
+  void clear_id() ;
+  ::uint32_t id() const;
+  void set_id(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_id() const;
+  void _internal_set_id(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:blog.v1.CreatePostResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 1,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_CreatePostResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const CreatePostResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::Timestamp* created_at_;
+    ::uint32_t id_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -2212,6 +2546,7 @@ class ListPostsResponse final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kPostsFieldNumber = 1,
+    kTotalCountFieldNumber = 2,
   };
   // repeated .blog.v1.ListPostsResponse.Post posts = 1 [json_name = "posts"];
   int posts_size() const;
@@ -2230,12 +2565,22 @@ class ListPostsResponse final : public ::google::protobuf::Message
   const ::blog::v1::ListPostsResponse_Post& posts(int index) const;
   ::blog::v1::ListPostsResponse_Post* add_posts();
   const ::google::protobuf::RepeatedPtrField<::blog::v1::ListPostsResponse_Post>& posts() const;
+  // uint32 total_count = 2 [json_name = "totalCount"];
+  void clear_total_count() ;
+  ::uint32_t total_count() const;
+  void set_total_count(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_total_count() const;
+  void _internal_set_total_count(::uint32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:blog.v1.ListPostsResponse)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 1,
+      1, 2, 1,
       0, 2>
       _table_;
 
@@ -2257,6 +2602,7 @@ class ListPostsResponse final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const ListPostsResponse& from_msg);
     ::google::protobuf::RepeatedPtrField< ::blog::v1::ListPostsResponse_Post > posts_;
+    ::uint32_t total_count_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -2380,6 +2726,148 @@ inline void CreatePostRequest::set_allocated_content(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:blog.v1.CreatePostRequest.content)
 }
 
+// optional string author = 3 [json_name = "author"];
+inline bool CreatePostRequest::has_author() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void CreatePostRequest::clear_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.author_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& CreatePostRequest::author() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.CreatePostRequest.author)
+  return _internal_author();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void CreatePostRequest::set_author(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.CreatePostRequest.author)
+}
+inline std::string* CreatePostRequest::mutable_author() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_author();
+  // @@protoc_insertion_point(field_mutable:blog.v1.CreatePostRequest.author)
+  return _s;
+}
+inline const std::string& CreatePostRequest::_internal_author() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.author_.Get();
+}
+inline void CreatePostRequest::_internal_set_author(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(value, GetArena());
+}
+inline std::string* CreatePostRequest::_internal_mutable_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.author_.Mutable( GetArena());
+}
+inline std::string* CreatePostRequest::release_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.CreatePostRequest.author)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.author_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.author_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void CreatePostRequest::set_allocated_author(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.author_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.author_.IsDefault()) {
+          _impl_.author_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.CreatePostRequest.author)
+}
+
+// optional string category = 4 [json_name = "category"];
+inline bool CreatePostRequest::has_category() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void CreatePostRequest::clear_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.category_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& CreatePostRequest::category() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.CreatePostRequest.category)
+  return _internal_category();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void CreatePostRequest::set_category(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.CreatePostRequest.category)
+}
+inline std::string* CreatePostRequest::mutable_category() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_category();
+  // @@protoc_insertion_point(field_mutable:blog.v1.CreatePostRequest.category)
+  return _s;
+}
+inline const std::string& CreatePostRequest::_internal_category() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.category_.Get();
+}
+inline void CreatePostRequest::_internal_set_category(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(value, GetArena());
+}
+inline std::string* CreatePostRequest::_internal_mutable_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.category_.Mutable( GetArena());
+}
+inline std::string* CreatePostRequest::release_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.CreatePostRequest.category)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.category_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.category_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void CreatePostRequest::set_allocated_category(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.category_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.category_.IsDefault()) {
+          _impl_.category_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.CreatePostRequest.category)
+}
+
 // -------------------------------------------------------------------
 
 // CreatePostResponse
@@ -2404,6 +2892,97 @@ inline ::uint32_t CreatePostResponse::_internal_id() const {
 inline void CreatePostResponse::_internal_set_id(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_ = value;
+}
+
+// .google.protobuf.Timestamp created_at = 2 [json_name = "createdAt"];
+inline bool CreatePostResponse::has_created_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.created_at_ != nullptr);
+  return value;
+}
+inline const ::google::protobuf::Timestamp& CreatePostResponse::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::google::protobuf::Timestamp* p = _impl_.created_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Timestamp&>(::google::protobuf::_Timestamp_default_instance_);
+}
+inline const ::google::protobuf::Timestamp& CreatePostResponse::created_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.CreatePostResponse.created_at)
+  return _internal_created_at();
+}
+inline void CreatePostResponse::unsafe_arena_set_allocated_created_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.created_at_);
+  }
+  _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blog.v1.CreatePostResponse.created_at)
+}
+inline ::google::protobuf::Timestamp* CreatePostResponse::release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::google::protobuf::Timestamp* released = _impl_.created_at_;
+  _impl_.created_at_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  if (GetArena() == nullptr) {
+    delete old;
+  }
+#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArena() != nullptr) {
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return released;
+}
+inline ::google::protobuf::Timestamp* CreatePostResponse::unsafe_arena_release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.CreatePostResponse.created_at)
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::google::protobuf::Timestamp* temp = _impl_.created_at_;
+  _impl_.created_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* CreatePostResponse::_internal_mutable_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.created_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
+    _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
+  }
+  return _impl_.created_at_;
+}
+inline ::google::protobuf::Timestamp* CreatePostResponse::mutable_created_at() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  ::google::protobuf::Timestamp* _msg = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:blog.v1.CreatePostResponse.created_at)
+  return _msg;
+}
+inline void CreatePostResponse::set_allocated_created_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.created_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+
+  _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.CreatePostResponse.created_at)
 }
 
 // -------------------------------------------------------------------
@@ -2558,9 +3137,519 @@ inline void GetPostByIDResponse::set_allocated_content(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:blog.v1.GetPostByIDResponse.content)
 }
 
+// optional string author = 4 [json_name = "author"];
+inline bool GetPostByIDResponse::has_author() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void GetPostByIDResponse::clear_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.author_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& GetPostByIDResponse::author() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.GetPostByIDResponse.author)
+  return _internal_author();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void GetPostByIDResponse::set_author(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.GetPostByIDResponse.author)
+}
+inline std::string* GetPostByIDResponse::mutable_author() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_author();
+  // @@protoc_insertion_point(field_mutable:blog.v1.GetPostByIDResponse.author)
+  return _s;
+}
+inline const std::string& GetPostByIDResponse::_internal_author() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.author_.Get();
+}
+inline void GetPostByIDResponse::_internal_set_author(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(value, GetArena());
+}
+inline std::string* GetPostByIDResponse::_internal_mutable_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.author_.Mutable( GetArena());
+}
+inline std::string* GetPostByIDResponse::release_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.GetPostByIDResponse.author)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.author_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.author_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void GetPostByIDResponse::set_allocated_author(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.author_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.author_.IsDefault()) {
+          _impl_.author_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.GetPostByIDResponse.author)
+}
+
+// optional string category = 5 [json_name = "category"];
+inline bool GetPostByIDResponse::has_category() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void GetPostByIDResponse::clear_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.category_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& GetPostByIDResponse::category() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.GetPostByIDResponse.category)
+  return _internal_category();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void GetPostByIDResponse::set_category(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.GetPostByIDResponse.category)
+}
+inline std::string* GetPostByIDResponse::mutable_category() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_category();
+  // @@protoc_insertion_point(field_mutable:blog.v1.GetPostByIDResponse.category)
+  return _s;
+}
+inline const std::string& GetPostByIDResponse::_internal_category() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.category_.Get();
+}
+inline void GetPostByIDResponse::_internal_set_category(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(value, GetArena());
+}
+inline std::string* GetPostByIDResponse::_internal_mutable_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.category_.Mutable( GetArena());
+}
+inline std::string* GetPostByIDResponse::release_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.GetPostByIDResponse.category)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.category_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.category_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void GetPostByIDResponse::set_allocated_category(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.category_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.category_.IsDefault()) {
+          _impl_.category_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.GetPostByIDResponse.category)
+}
+
+// .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+inline bool GetPostByIDResponse::has_created_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.created_at_ != nullptr);
+  return value;
+}
+inline const ::google::protobuf::Timestamp& GetPostByIDResponse::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::google::protobuf::Timestamp* p = _impl_.created_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Timestamp&>(::google::protobuf::_Timestamp_default_instance_);
+}
+inline const ::google::protobuf::Timestamp& GetPostByIDResponse::created_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.GetPostByIDResponse.created_at)
+  return _internal_created_at();
+}
+inline void GetPostByIDResponse::unsafe_arena_set_allocated_created_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.created_at_);
+  }
+  _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blog.v1.GetPostByIDResponse.created_at)
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::google::protobuf::Timestamp* released = _impl_.created_at_;
+  _impl_.created_at_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  if (GetArena() == nullptr) {
+    delete old;
+  }
+#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArena() != nullptr) {
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return released;
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::unsafe_arena_release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.GetPostByIDResponse.created_at)
+
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::google::protobuf::Timestamp* temp = _impl_.created_at_;
+  _impl_.created_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::_internal_mutable_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.created_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
+    _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
+  }
+  return _impl_.created_at_;
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::mutable_created_at() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  ::google::protobuf::Timestamp* _msg = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:blog.v1.GetPostByIDResponse.created_at)
+  return _msg;
+}
+inline void GetPostByIDResponse::set_allocated_created_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.created_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+
+  _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.GetPostByIDResponse.created_at)
+}
+
+// .google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];
+inline bool GetPostByIDResponse::has_updated_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.updated_at_ != nullptr);
+  return value;
+}
+inline const ::google::protobuf::Timestamp& GetPostByIDResponse::_internal_updated_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::google::protobuf::Timestamp* p = _impl_.updated_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Timestamp&>(::google::protobuf::_Timestamp_default_instance_);
+}
+inline const ::google::protobuf::Timestamp& GetPostByIDResponse::updated_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.GetPostByIDResponse.updated_at)
+  return _internal_updated_at();
+}
+inline void GetPostByIDResponse::unsafe_arena_set_allocated_updated_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.updated_at_);
+  }
+  _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blog.v1.GetPostByIDResponse.updated_at)
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::release_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  ::google::protobuf::Timestamp* released = _impl_.updated_at_;
+  _impl_.updated_at_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  if (GetArena() == nullptr) {
+    delete old;
+  }
+#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArena() != nullptr) {
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return released;
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::unsafe_arena_release_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.GetPostByIDResponse.updated_at)
+
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  ::google::protobuf::Timestamp* temp = _impl_.updated_at_;
+  _impl_.updated_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::_internal_mutable_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.updated_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
+    _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
+  }
+  return _impl_.updated_at_;
+}
+inline ::google::protobuf::Timestamp* GetPostByIDResponse::mutable_updated_at() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  ::google::protobuf::Timestamp* _msg = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:blog.v1.GetPostByIDResponse.updated_at)
+  return _msg;
+}
+inline void GetPostByIDResponse::set_allocated_updated_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.updated_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+
+  _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.GetPostByIDResponse.updated_at)
+}
+
 // -------------------------------------------------------------------
 
 // ListPostsRequest
+
+// optional string author = 1 [json_name = "author"];
+inline bool ListPostsRequest::has_author() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void ListPostsRequest::clear_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.author_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& ListPostsRequest::author() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsRequest.author)
+  return _internal_author();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ListPostsRequest::set_author(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsRequest.author)
+}
+inline std::string* ListPostsRequest::mutable_author() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_author();
+  // @@protoc_insertion_point(field_mutable:blog.v1.ListPostsRequest.author)
+  return _s;
+}
+inline const std::string& ListPostsRequest::_internal_author() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.author_.Get();
+}
+inline void ListPostsRequest::_internal_set_author(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(value, GetArena());
+}
+inline std::string* ListPostsRequest::_internal_mutable_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.author_.Mutable( GetArena());
+}
+inline std::string* ListPostsRequest::release_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.ListPostsRequest.author)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.author_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.author_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void ListPostsRequest::set_allocated_author(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.author_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.author_.IsDefault()) {
+          _impl_.author_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.ListPostsRequest.author)
+}
+
+// optional string category = 2 [json_name = "category"];
+inline bool ListPostsRequest::has_category() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void ListPostsRequest::clear_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.category_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& ListPostsRequest::category() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsRequest.category)
+  return _internal_category();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ListPostsRequest::set_category(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsRequest.category)
+}
+inline std::string* ListPostsRequest::mutable_category() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_category();
+  // @@protoc_insertion_point(field_mutable:blog.v1.ListPostsRequest.category)
+  return _s;
+}
+inline const std::string& ListPostsRequest::_internal_category() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.category_.Get();
+}
+inline void ListPostsRequest::_internal_set_category(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(value, GetArena());
+}
+inline std::string* ListPostsRequest::_internal_mutable_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.category_.Mutable( GetArena());
+}
+inline std::string* ListPostsRequest::release_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.ListPostsRequest.category)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.category_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.category_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void ListPostsRequest::set_allocated_category(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.category_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.category_.IsDefault()) {
+          _impl_.category_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.ListPostsRequest.category)
+}
+
+// uint32 page = 3 [json_name = "page", (.buf.validate.field) = {
+inline void ListPostsRequest::clear_page() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.page_ = 0u;
+}
+inline ::uint32_t ListPostsRequest::page() const {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsRequest.page)
+  return _internal_page();
+}
+inline void ListPostsRequest::set_page(::uint32_t value) {
+  _internal_set_page(value);
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsRequest.page)
+}
+inline ::uint32_t ListPostsRequest::_internal_page() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.page_;
+}
+inline void ListPostsRequest::_internal_set_page(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.page_ = value;
+}
+
+// uint32 page_size = 4 [json_name = "pageSize", (.buf.validate.field) = {
+inline void ListPostsRequest::clear_page_size() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.page_size_ = 0u;
+}
+inline ::uint32_t ListPostsRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsRequest.page_size)
+  return _internal_page_size();
+}
+inline void ListPostsRequest::set_page_size(::uint32_t value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsRequest.page_size)
+}
+inline ::uint32_t ListPostsRequest::_internal_page_size() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.page_size_;
+}
+inline void ListPostsRequest::_internal_set_page_size(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.page_size_ = value;
+}
 
 // -------------------------------------------------------------------
 
@@ -2688,6 +3777,239 @@ inline void ListPostsResponse_Post::set_allocated_content(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:blog.v1.ListPostsResponse.Post.content)
 }
 
+// optional string author = 4 [json_name = "author"];
+inline bool ListPostsResponse_Post::has_author() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void ListPostsResponse_Post::clear_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.author_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& ListPostsResponse_Post::author() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsResponse.Post.author)
+  return _internal_author();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ListPostsResponse_Post::set_author(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsResponse.Post.author)
+}
+inline std::string* ListPostsResponse_Post::mutable_author() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_author();
+  // @@protoc_insertion_point(field_mutable:blog.v1.ListPostsResponse.Post.author)
+  return _s;
+}
+inline const std::string& ListPostsResponse_Post::_internal_author() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.author_.Get();
+}
+inline void ListPostsResponse_Post::_internal_set_author(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.author_.Set(value, GetArena());
+}
+inline std::string* ListPostsResponse_Post::_internal_mutable_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.author_.Mutable( GetArena());
+}
+inline std::string* ListPostsResponse_Post::release_author() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.ListPostsResponse.Post.author)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.author_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.author_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void ListPostsResponse_Post::set_allocated_author(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.author_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.author_.IsDefault()) {
+          _impl_.author_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.ListPostsResponse.Post.author)
+}
+
+// optional string category = 5 [json_name = "category"];
+inline bool ListPostsResponse_Post::has_category() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void ListPostsResponse_Post::clear_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.category_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& ListPostsResponse_Post::category() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsResponse.Post.category)
+  return _internal_category();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ListPostsResponse_Post::set_category(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsResponse.Post.category)
+}
+inline std::string* ListPostsResponse_Post::mutable_category() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_category();
+  // @@protoc_insertion_point(field_mutable:blog.v1.ListPostsResponse.Post.category)
+  return _s;
+}
+inline const std::string& ListPostsResponse_Post::_internal_category() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.category_.Get();
+}
+inline void ListPostsResponse_Post::_internal_set_category(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.category_.Set(value, GetArena());
+}
+inline std::string* ListPostsResponse_Post::_internal_mutable_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.category_.Mutable( GetArena());
+}
+inline std::string* ListPostsResponse_Post::release_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.ListPostsResponse.Post.category)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.category_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.category_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void ListPostsResponse_Post::set_allocated_category(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.category_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.category_.IsDefault()) {
+          _impl_.category_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.ListPostsResponse.Post.category)
+}
+
+// .google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];
+inline bool ListPostsResponse_Post::has_created_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.created_at_ != nullptr);
+  return value;
+}
+inline const ::google::protobuf::Timestamp& ListPostsResponse_Post::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::google::protobuf::Timestamp* p = _impl_.created_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Timestamp&>(::google::protobuf::_Timestamp_default_instance_);
+}
+inline const ::google::protobuf::Timestamp& ListPostsResponse_Post::created_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsResponse.Post.created_at)
+  return _internal_created_at();
+}
+inline void ListPostsResponse_Post::unsafe_arena_set_allocated_created_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.created_at_);
+  }
+  _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blog.v1.ListPostsResponse.Post.created_at)
+}
+inline ::google::protobuf::Timestamp* ListPostsResponse_Post::release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::google::protobuf::Timestamp* released = _impl_.created_at_;
+  _impl_.created_at_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  if (GetArena() == nullptr) {
+    delete old;
+  }
+#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArena() != nullptr) {
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return released;
+}
+inline ::google::protobuf::Timestamp* ListPostsResponse_Post::unsafe_arena_release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.ListPostsResponse.Post.created_at)
+
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::google::protobuf::Timestamp* temp = _impl_.created_at_;
+  _impl_.created_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* ListPostsResponse_Post::_internal_mutable_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.created_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
+    _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
+  }
+  return _impl_.created_at_;
+}
+inline ::google::protobuf::Timestamp* ListPostsResponse_Post::mutable_created_at() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  ::google::protobuf::Timestamp* _msg = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:blog.v1.ListPostsResponse.Post.created_at)
+  return _msg;
+}
+inline void ListPostsResponse_Post::set_allocated_created_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.created_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+
+  _impl_.created_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.ListPostsResponse.Post.created_at)
+}
+
 // -------------------------------------------------------------------
 
 // ListPostsResponse
@@ -2741,6 +4063,28 @@ ListPostsResponse::_internal_mutable_posts() {
   return &_impl_.posts_;
 }
 
+// uint32 total_count = 2 [json_name = "totalCount"];
+inline void ListPostsResponse::clear_total_count() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.total_count_ = 0u;
+}
+inline ::uint32_t ListPostsResponse::total_count() const {
+  // @@protoc_insertion_point(field_get:blog.v1.ListPostsResponse.total_count)
+  return _internal_total_count();
+}
+inline void ListPostsResponse::set_total_count(::uint32_t value) {
+  _internal_set_total_count(value);
+  // @@protoc_insertion_point(field_set:blog.v1.ListPostsResponse.total_count)
+}
+inline ::uint32_t ListPostsResponse::_internal_total_count() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.total_count_;
+}
+inline void ListPostsResponse::_internal_set_total_count(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.total_count_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // UpdatePostRequest
@@ -2767,10 +4111,15 @@ inline void UpdatePostRequest::_internal_set_id(::uint32_t value) {
   _impl_.id_ = value;
 }
 
-// string title = 2 [json_name = "title"];
+// optional string title = 2 [json_name = "title", (.buf.validate.field) = {
+inline bool UpdatePostRequest::has_title() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
 inline void UpdatePostRequest::clear_title() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.title_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& UpdatePostRequest::title() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -2781,6 +4130,7 @@ template <typename Arg_, typename... Args_>
 inline PROTOBUF_ALWAYS_INLINE void UpdatePostRequest::set_title(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.title_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:blog.v1.UpdatePostRequest.title)
 }
@@ -2795,19 +4145,34 @@ inline const std::string& UpdatePostRequest::_internal_title() const {
 }
 inline void UpdatePostRequest::_internal_set_title(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.title_.Set(value, GetArena());
 }
 inline std::string* UpdatePostRequest::_internal_mutable_title() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.title_.Mutable( GetArena());
 }
 inline std::string* UpdatePostRequest::release_title() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:blog.v1.UpdatePostRequest.title)
-  return _impl_.title_.Release();
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.title_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.title_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
 }
 inline void UpdatePostRequest::set_allocated_title(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
   _impl_.title_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
         if (_impl_.title_.IsDefault()) {
@@ -2817,10 +4182,15 @@ inline void UpdatePostRequest::set_allocated_title(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:blog.v1.UpdatePostRequest.title)
 }
 
-// string content = 3 [json_name = "content"];
+// optional string content = 3 [json_name = "content", (.buf.validate.field) = {
+inline bool UpdatePostRequest::has_content() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
 inline void UpdatePostRequest::clear_content() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.content_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const std::string& UpdatePostRequest::content() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -2831,6 +4201,7 @@ template <typename Arg_, typename... Args_>
 inline PROTOBUF_ALWAYS_INLINE void UpdatePostRequest::set_content(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.content_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:blog.v1.UpdatePostRequest.content)
 }
@@ -2845,19 +4216,34 @@ inline const std::string& UpdatePostRequest::_internal_content() const {
 }
 inline void UpdatePostRequest::_internal_set_content(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.content_.Set(value, GetArena());
 }
 inline std::string* UpdatePostRequest::_internal_mutable_content() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.content_.Mutable( GetArena());
 }
 inline std::string* UpdatePostRequest::release_content() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:blog.v1.UpdatePostRequest.content)
-  return _impl_.content_.Release();
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.content_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.content_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
 }
 inline void UpdatePostRequest::set_allocated_content(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
   _impl_.content_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
         if (_impl_.content_.IsDefault()) {
@@ -2865,6 +4251,77 @@ inline void UpdatePostRequest::set_allocated_content(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:blog.v1.UpdatePostRequest.content)
+}
+
+// optional string category = 4 [json_name = "category"];
+inline bool UpdatePostRequest::has_category() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline void UpdatePostRequest::clear_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.category_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const std::string& UpdatePostRequest::category() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.UpdatePostRequest.category)
+  return _internal_category();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void UpdatePostRequest::set_category(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.category_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:blog.v1.UpdatePostRequest.category)
+}
+inline std::string* UpdatePostRequest::mutable_category() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_category();
+  // @@protoc_insertion_point(field_mutable:blog.v1.UpdatePostRequest.category)
+  return _s;
+}
+inline const std::string& UpdatePostRequest::_internal_category() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.category_.Get();
+}
+inline void UpdatePostRequest::_internal_set_category(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.category_.Set(value, GetArena());
+}
+inline std::string* UpdatePostRequest::_internal_mutable_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.category_.Mutable( GetArena());
+}
+inline std::string* UpdatePostRequest::release_category() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.UpdatePostRequest.category)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.category_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.category_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void UpdatePostRequest::set_allocated_category(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.category_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.category_.IsDefault()) {
+          _impl_.category_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.UpdatePostRequest.category)
 }
 
 // -------------------------------------------------------------------
@@ -2891,6 +4348,97 @@ inline ::uint32_t UpdatePostResponse::_internal_id() const {
 inline void UpdatePostResponse::_internal_set_id(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_ = value;
+}
+
+// .google.protobuf.Timestamp updated_at = 2 [json_name = "updatedAt"];
+inline bool UpdatePostResponse::has_updated_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.updated_at_ != nullptr);
+  return value;
+}
+inline const ::google::protobuf::Timestamp& UpdatePostResponse::_internal_updated_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::google::protobuf::Timestamp* p = _impl_.updated_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Timestamp&>(::google::protobuf::_Timestamp_default_instance_);
+}
+inline const ::google::protobuf::Timestamp& UpdatePostResponse::updated_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:blog.v1.UpdatePostResponse.updated_at)
+  return _internal_updated_at();
+}
+inline void UpdatePostResponse::unsafe_arena_set_allocated_updated_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.updated_at_);
+  }
+  _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blog.v1.UpdatePostResponse.updated_at)
+}
+inline ::google::protobuf::Timestamp* UpdatePostResponse::release_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::google::protobuf::Timestamp* released = _impl_.updated_at_;
+  _impl_.updated_at_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  if (GetArena() == nullptr) {
+    delete old;
+  }
+#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArena() != nullptr) {
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return released;
+}
+inline ::google::protobuf::Timestamp* UpdatePostResponse::unsafe_arena_release_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:blog.v1.UpdatePostResponse.updated_at)
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::google::protobuf::Timestamp* temp = _impl_.updated_at_;
+  _impl_.updated_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* UpdatePostResponse::_internal_mutable_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.updated_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
+    _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
+  }
+  return _impl_.updated_at_;
+}
+inline ::google::protobuf::Timestamp* UpdatePostResponse::mutable_updated_at() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  ::google::protobuf::Timestamp* _msg = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:blog.v1.UpdatePostResponse.updated_at)
+  return _msg;
+}
+inline void UpdatePostResponse::set_allocated_updated_at(::google::protobuf::Timestamp* value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.updated_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+
+  _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:blog.v1.UpdatePostResponse.updated_at)
 }
 
 // -------------------------------------------------------------------
@@ -2943,6 +4491,28 @@ inline ::uint32_t DeletePostResponse::_internal_id() const {
 inline void DeletePostResponse::_internal_set_id(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_ = value;
+}
+
+// bool success = 2 [json_name = "success"];
+inline void DeletePostResponse::clear_success() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.success_ = false;
+}
+inline bool DeletePostResponse::success() const {
+  // @@protoc_insertion_point(field_get:blog.v1.DeletePostResponse.success)
+  return _internal_success();
+}
+inline void DeletePostResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:blog.v1.DeletePostResponse.success)
+}
+inline bool DeletePostResponse::_internal_success() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.success_;
+}
+inline void DeletePostResponse::_internal_set_success(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.success_ = value;
 }
 
 #ifdef __GNUC__
