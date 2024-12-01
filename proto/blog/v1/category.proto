@@ -37,7 +37,7 @@ service CategoryService {
 
 message CreateCategoryRequest {
   string name = 1 [(buf.validate.field).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 255
   }];
 }

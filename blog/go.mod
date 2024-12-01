@@ -1,3 +1,3 @@
 module github.com/pplmx/pb/blog
 
-go 1.22
+go 1.23

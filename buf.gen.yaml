@@ -1,24 +1,40 @@
 version: v2
 managed:
-  enabled: true
-  disable:
-    - file_option: go_package
-      module: buf.build/googleapis/googleapis
-    - file_option: go_package
-      module: buf.build/bufbuild/protovalidate
-  override:
-    - file_option: go_package_prefix
-      value: github.com/pplmx/pb
+    enabled: true
+    disable:
+        -   file_option: go_package
+            module: buf.build/googleapis/googleapis
+        -   file_option: go_package
+            module: buf.build/bufbuild/protovalidate
+    override:
+        -   file_option: go_package_prefix
+            value: github.com/pplmx/pb
 plugins:
-  - local: protoc-gen-openapi
-    out: docs
-    opt: paths=source_relative
-  - local: protoc-gen-go
-    out: .
-    opt: paths=source_relative
-  - local: protoc-gen-go-grpc
-    out: .
-    opt: paths=source_relative
-  - local: protoc-gen-go-http
-    out: .
-    opt: paths=source_relative
+    # Local plugins for docs
+    -   local: protoc-gen-openapi
+        out: docs
+
+    # BSR remote plugins for Cpp
+    -   remote: buf.build/protocolbuffers/cpp
+        out: gen/cpp
+    -   remote: buf.build/grpc/cpp
+        out: gen/cpp
+
+    # BSR remote plugins for Python
+    -   remote: buf.build/protocolbuffers/python
+        out: gen/python
+    -   remote: buf.build/grpc/python
+        out: gen/python
+
+    # BSR remote plugins for Go
+    -   remote: buf.build/protocolbuffers/go
+        out: .
+        opt: paths=source_relative
+    -   remote: buf.build/grpc/go
+        out: .
+        opt: paths=source_relative
+
+    # Local plugins for Go Http
+    -   local: protoc-gen-go-http
+        out: .
+        opt: paths=source_relative
