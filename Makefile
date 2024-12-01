@@ -12,7 +12,7 @@ pb: up fmt lint gen
 
 # buf update
 up:
-	@cd proto; buf dep update
+	@buf dep update
 
 # buf format
 fmt:
