@@ -11,7 +11,7 @@ managed:
             value: github.com/pplmx/pb
 plugins:
     # Local plugins for docs
-    -   local: protoc-gen-openapi
+    -   remote: buf.build/community/google-gnostic-openapi
         out: docs
 
     # BSR remote plugins for Cpp

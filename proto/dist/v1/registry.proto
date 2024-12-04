@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package dist.v1;
+
+option go_package = "github.com/pplmx/pb/dist/v1;distv1";
+
+// 注册中心服务
+service RegistryService {
+  rpc Register(RegisterRequest) returns (RegisterResponse) {}
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse) {}
+  rpc WatchRegistry(WatchRegistryRequest) returns (stream WatchRegistryResponse) {}
+}
+
+message Node {
+  string id = 1;
+  string name = 2;
+  string ip = 3; // <ip|hostname>
+  uint32 port = 4;
+}
+
+// 注册请求
+message RegisterRequest {
+  Node node = 1;
+}
+
+message RegisterResponse {
+  bool success = 1;
+  string error = 2;
+}
+
+// 心跳请求
+message HeartbeatRequest {
+  string node_id = 1;
+}
+
+message HeartbeatResponse {
+  bool success = 1;
+  string error = 2;
+}
+
+// 监听注册中心事件
+message WatchRegistryRequest {
+  string node_id = 1;
+}
+
+message WatchRegistryResponse {
+  oneof event {
+    ShutdownEvent shutdown = 1;
+  }
+}
+
+// 服务关闭事件
+message ShutdownEvent {
+  string node_id = 1;
+}
