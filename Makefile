@@ -1,7 +1,7 @@
 .PHONY: help init pb up fmt lint gen
 .DEFAULT_GOAL := help
 
-# init: go install some necessary tools
+# init: install some necessary tools
 init:
 	@go install github.com/bufbuild/buf/cmd/buf@latest
 	@go install github.com/google/gnostic/cmd/protoc-gen-openapi@latest
