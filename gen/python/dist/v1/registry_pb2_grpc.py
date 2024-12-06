@@ -6,7 +6,7 @@ from dist.v1 import registry_pb2 as dist_dot_v1_dot_registry__pb2
 
 
 class RegistryServiceStub(object):
-    """注册中心服务
+    """Registry Service for node management
     """
 
     def __init__(self, channel):
@@ -33,23 +33,26 @@ class RegistryServiceStub(object):
 
 
 class RegistryServiceServicer(object):
-    """注册中心服务
+    """Registry Service for node management
     """
 
     def Register(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Register a new computational node
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Heartbeat(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Send periodic heartbeat to maintain node presence
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def WatchRegistry(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Watch for changes in the registry
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -81,7 +84,7 @@ def add_RegistryServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class RegistryService(object):
-    """注册中心服务
+    """Registry Service for node management
     """
 
     @staticmethod

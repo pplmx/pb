@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package dist.v1;
+
+option go_package = "github.com/pplmx/pb/dist/v1;distv1";
+
+// Represents a computational node in the distributed system
+message Node {
+  string id = 1; // Unique identifier for the node
+  string name = 2; // Human-readable name of the node
+  string address = 3; // IP address or hostname
+  uint32 port = 4; // Port number for communication
+  NodeStatus status = 5; // Current status of the node
+
+  // Possible states of a computational node
+  enum NodeStatus {
+    NODE_STATUS_UNSPECIFIED = 0;
+    NODE_STATUS_ACTIVE = 1;
+    NODE_STATUS_INACTIVE = 2;
+    NODE_STATUS_OVERLOADED = 3;
+  }
+}
+
+// Represents a distributed task
+message Task {
+  string id = 1; // Unique task identifier
+  string name = 2; // Task name
+  TaskType type = 3; // Type of task
+  TaskStatus status = 4; // Current task status
+  bytes payload = 5; // Serialized task data
+
+  // Possible task types
+  enum TaskType {
+    TASK_TYPE_UNSPECIFIED = 0;
+    TASK_TYPE_COMPUTE = 1;
+    TASK_TYPE_DATA_PROCESSING = 2;
+    TASK_TYPE_MACHINE_LEARNING = 3;
+  }
+
+  // Possible task statuses
+  enum TaskStatus {
+    TASK_STATUS_UNSPECIFIED = 0;
+    TASK_STATUS_PENDING = 1;
+    TASK_STATUS_RUNNING = 2;
+    TASK_STATUS_COMPLETED = 3;
+    TASK_STATUS_FAILED = 4;
+    TASK_STATUS_CANCELED = 5;
+  }
+}
+
+// Common event messages
+message NodeStatusChangeEvent {
+  Node node = 1;
+  Node.NodeStatus previous_status = 2;
+  Node.NodeStatus current_status = 3;
+}
+
+message ShutdownEvent {
+  string node_id = 1;
+  string reason = 2;
+}
+
+message TaskStatusChangeEvent {
+  Task task = 1;
+  Task.TaskStatus previous_status = 2;
+  Task.TaskStatus current_status = 3;
+}
+
+message TaskAssignmentEvent {
+  Task task = 1;
+  string assigned_node_id = 2;
+}

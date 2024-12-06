@@ -2,54 +2,48 @@ syntax = "proto3";
 
 package dist.v1;
 
+import "dist/v1/common.proto";
+
 option go_package = "github.com/pplmx/pb/dist/v1;distv1";
 
-// 注册中心服务
+// Registry Service for node management
 service RegistryService {
+  // Register a new computational node
   rpc Register(RegisterRequest) returns (RegisterResponse) {}
+
+  // Send periodic heartbeat to maintain node presence
   rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse) {}
+
+  // Watch for changes in the registry
   rpc WatchRegistry(WatchRegistryRequest) returns (stream WatchRegistryResponse) {}
 }
 
-message Node {
-  string id = 1;
-  string name = 2;
-  string ip = 3; // <ip|hostname>
-  uint32 port = 4;
-}
-
-// 注册请求
+// Request and response message definitions
 message RegisterRequest {
-  Node node = 1;
+  dist.v1.Node node = 1;
 }
 
 message RegisterResponse {
   bool success = 1;
-  string error = 2;
+  string error_message = 2;
 }
 
-// 心跳请求
 message HeartbeatRequest {
   string node_id = 1;
 }
 
 message HeartbeatResponse {
   bool success = 1;
-  string error = 2;
+  string error_message = 2;
 }
 
-// 监听注册中心事件
 message WatchRegistryRequest {
   string node_id = 1;
 }
 
 message WatchRegistryResponse {
   oneof event {
-    ShutdownEvent shutdown = 1;
+    dist.v1.NodeStatusChangeEvent node_status_change = 1;
+    dist.v1.ShutdownEvent shutdown = 2;
   }
-}
-
-// 服务关闭事件
-message ShutdownEvent {
-  string node_id = 1;
 }

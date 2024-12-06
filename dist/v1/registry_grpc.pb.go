@@ -28,10 +28,13 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
-// 注册中心服务
+// Registry Service for node management
 type RegistryServiceClient interface {
+	// Register a new computational node
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
+	// Send periodic heartbeat to maintain node presence
 	Heartbeat(ctx context.Context, in *HeartbeatRequest, opts ...grpc.CallOption) (*HeartbeatResponse, error)
+	// Watch for changes in the registry
 	WatchRegistry(ctx context.Context, in *WatchRegistryRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[WatchRegistryResponse], error)
 }
 
@@ -86,10 +89,13 @@ type RegistryService_WatchRegistryClient = grpc.ServerStreamingClient[WatchRegis
 // All implementations must embed UnimplementedRegistryServiceServer
 // for forward compatibility.
 //
-// 注册中心服务
+// Registry Service for node management
 type RegistryServiceServer interface {
+	// Register a new computational node
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
+	// Send periodic heartbeat to maintain node presence
 	Heartbeat(context.Context, *HeartbeatRequest) (*HeartbeatResponse, error)
+	// Watch for changes in the registry
 	WatchRegistry(*WatchRegistryRequest, grpc.ServerStreamingServer[WatchRegistryResponse]) error
 	mustEmbedUnimplementedRegistryServiceServer()
 }

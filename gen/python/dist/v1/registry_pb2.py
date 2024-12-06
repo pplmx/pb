@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from dist.v1 import common_pb2 as dist_dot_v1_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x64ist/v1/registry.proto\x12\x07\x64ist.v1\"N\n\x04Node\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x0e\n\x02ip\x18\x03 \x01(\tR\x02ip\x12\x12\n\x04port\x18\x04 \x01(\rR\x04port\"4\n\x0fRegisterRequest\x12!\n\x04node\x18\x01 \x01(\x0b\x32\r.dist.v1.NodeR\x04node\"B\n\x10RegisterResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"+\n\x10HeartbeatRequest\x12\x17\n\x07node_id\x18\x01 \x01(\tR\x06nodeId\"C\n\x11HeartbeatResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"/\n\x14WatchRegistryRequest\x12\x17\n\x07node_id\x18\x01 \x01(\tR\x06nodeId\"V\n\x15WatchRegistryResponse\x12\x34\n\x08shutdown\x18\x01 \x01(\x0b\x32\x16.dist.v1.ShutdownEventH\x00R\x08shutdownB\x07\n\x05\x65vent\"(\n\rShutdownEvent\x12\x17\n\x07node_id\x18\x01 \x01(\tR\x06nodeId2\xee\x01\n\x0fRegistryService\x12\x41\n\x08Register\x12\x18.dist.v1.RegisterRequest\x1a\x19.dist.v1.RegisterResponse\"\x00\x12\x44\n\tHeartbeat\x12\x19.dist.v1.HeartbeatRequest\x1a\x1a.dist.v1.HeartbeatResponse\"\x00\x12R\n\rWatchRegistry\x12\x1d.dist.v1.WatchRegistryRequest\x1a\x1e.dist.v1.WatchRegistryResponse\"\x00\x30\x01\x42}\n\x0b\x63om.dist.v1B\rRegistryProtoP\x01Z\"github.com/pplmx/pb/dist/v1;distv1\xa2\x02\x03\x44XX\xaa\x02\x07\x44ist.V1\xca\x02\x07\x44ist\\V1\xe2\x02\x13\x44ist\\V1\\GPBMetadata\xea\x02\x08\x44ist::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x64ist/v1/registry.proto\x12\x07\x64ist.v1\x1a\x14\x64ist/v1/common.proto\"4\n\x0fRegisterRequest\x12!\n\x04node\x18\x01 \x01(\x0b\x32\r.dist.v1.NodeR\x04node\"Q\n\x10RegisterResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12#\n\rerror_message\x18\x02 \x01(\tR\x0c\x65rrorMessage\"+\n\x10HeartbeatRequest\x12\x17\n\x07node_id\x18\x01 \x01(\tR\x06nodeId\"R\n\x11HeartbeatResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12#\n\rerror_message\x18\x02 \x01(\tR\x0c\x65rrorMessage\"/\n\x14WatchRegistryRequest\x12\x17\n\x07node_id\x18\x01 \x01(\tR\x06nodeId\"\xa6\x01\n\x15WatchRegistryResponse\x12N\n\x12node_status_change\x18\x01 \x01(\x0b\x32\x1e.dist.v1.NodeStatusChangeEventH\x00R\x10nodeStatusChange\x12\x34\n\x08shutdown\x18\x02 \x01(\x0b\x32\x16.dist.v1.ShutdownEventH\x00R\x08shutdownB\x07\n\x05\x65vent2\xee\x01\n\x0fRegistryService\x12\x41\n\x08Register\x12\x18.dist.v1.RegisterRequest\x1a\x19.dist.v1.RegisterResponse\"\x00\x12\x44\n\tHeartbeat\x12\x19.dist.v1.HeartbeatRequest\x1a\x1a.dist.v1.HeartbeatResponse\"\x00\x12R\n\rWatchRegistry\x12\x1d.dist.v1.WatchRegistryRequest\x1a\x1e.dist.v1.WatchRegistryResponse\"\x00\x30\x01\x42}\n\x0b\x63om.dist.v1B\rRegistryProtoP\x01Z\"github.com/pplmx/pb/dist/v1;distv1\xa2\x02\x03\x44XX\xaa\x02\x07\x44ist.V1\xca\x02\x07\x44ist\\V1\xe2\x02\x13\x44ist\\V1\\GPBMetadata\xea\x02\x08\x44ist::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,22 +33,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'dist.v1.registry_pb2', _glo
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\013com.dist.v1B\rRegistryProtoP\001Z\"github.com/pplmx/pb/dist/v1;distv1\242\002\003DXX\252\002\007Dist.V1\312\002\007Dist\\V1\342\002\023Dist\\V1\\GPBMetadata\352\002\010Dist::V1'
-  _globals['_NODE']._serialized_start=35
-  _globals['_NODE']._serialized_end=113
-  _globals['_REGISTERREQUEST']._serialized_start=115
-  _globals['_REGISTERREQUEST']._serialized_end=167
-  _globals['_REGISTERRESPONSE']._serialized_start=169
-  _globals['_REGISTERRESPONSE']._serialized_end=235
-  _globals['_HEARTBEATREQUEST']._serialized_start=237
-  _globals['_HEARTBEATREQUEST']._serialized_end=280
-  _globals['_HEARTBEATRESPONSE']._serialized_start=282
-  _globals['_HEARTBEATRESPONSE']._serialized_end=349
-  _globals['_WATCHREGISTRYREQUEST']._serialized_start=351
-  _globals['_WATCHREGISTRYREQUEST']._serialized_end=398
-  _globals['_WATCHREGISTRYRESPONSE']._serialized_start=400
-  _globals['_WATCHREGISTRYRESPONSE']._serialized_end=486
-  _globals['_SHUTDOWNEVENT']._serialized_start=488
-  _globals['_SHUTDOWNEVENT']._serialized_end=528
-  _globals['_REGISTRYSERVICE']._serialized_start=531
-  _globals['_REGISTRYSERVICE']._serialized_end=769
+  _globals['_REGISTERREQUEST']._serialized_start=57
+  _globals['_REGISTERREQUEST']._serialized_end=109
+  _globals['_REGISTERRESPONSE']._serialized_start=111
+  _globals['_REGISTERRESPONSE']._serialized_end=192
+  _globals['_HEARTBEATREQUEST']._serialized_start=194
+  _globals['_HEARTBEATREQUEST']._serialized_end=237
+  _globals['_HEARTBEATRESPONSE']._serialized_start=239
+  _globals['_HEARTBEATRESPONSE']._serialized_end=321
+  _globals['_WATCHREGISTRYREQUEST']._serialized_start=323
+  _globals['_WATCHREGISTRYREQUEST']._serialized_end=370
+  _globals['_WATCHREGISTRYRESPONSE']._serialized_start=373
+  _globals['_WATCHREGISTRYRESPONSE']._serialized_end=539
+  _globals['_REGISTRYSERVICE']._serialized_start=542
+  _globals['_REGISTRYSERVICE']._serialized_end=780
 # @@protoc_insertion_point(module_scope)

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package dist.v1;
+
+import "dist/v1/common.proto";
+
+option go_package = "github.com/pplmx/pb/dist/v1;distv1";
+
+// Distributed Task Service for task scheduling and monitoring
+service DistributedTaskService {
+  // Submit a new task for distributed processing
+  rpc SubmitTask(SubmitTaskRequest) returns (SubmitTaskResponse) {}
+
+  // Watch task status and events
+  rpc WatchTasks(WatchTasksRequest) returns (stream WatchTasksResponse) {}
+
+  // Cancel a running task
+  rpc CancelTask(CancelTaskRequest) returns (CancelTaskResponse) {}
+}
+
+// Request and response message definitions
+message SubmitTaskRequest {
+  dist.v1.Task task = 1;
+  string requester_node_id = 2;
+}
+
+message SubmitTaskResponse {
+  bool accepted = 1;
+  string task_id = 2;
+  string error_message = 3;
+}
+
+message WatchTasksRequest {
+  string node_id = 1;
+  repeated string task_ids = 2;
+}
+
+message WatchTasksResponse {
+  oneof event {
+    dist.v1.TaskStatusChangeEvent task_status_change = 1;
+    dist.v1.TaskAssignmentEvent task_assignment = 2;
+  }
+}
+
+message CancelTaskRequest {
+  string task_id = 1;
+  string requester_node_id = 2;
+}
+
+message CancelTaskResponse {
+  bool success = 1;
+  string error_message = 2;
+}

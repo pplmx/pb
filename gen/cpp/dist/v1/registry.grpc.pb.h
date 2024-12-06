@@ -28,7 +28,7 @@
 namespace dist {
 namespace v1 {
 
-// 注册中心服务
+// Registry Service for node management
 class RegistryService final {
  public:
   static constexpr char const* service_full_name() {
@@ -37,6 +37,7 @@ class RegistryService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Register a new computational node
     virtual ::grpc::Status Register(::grpc::ClientContext* context, const ::dist::v1::RegisterRequest& request, ::dist::v1::RegisterResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::RegisterResponse>> AsyncRegister(::grpc::ClientContext* context, const ::dist::v1::RegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::RegisterResponse>>(AsyncRegisterRaw(context, request, cq));
@@ -44,6 +45,7 @@ class RegistryService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::RegisterResponse>> PrepareAsyncRegister(::grpc::ClientContext* context, const ::dist::v1::RegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::RegisterResponse>>(PrepareAsyncRegisterRaw(context, request, cq));
     }
+    // Send periodic heartbeat to maintain node presence
     virtual ::grpc::Status Heartbeat(::grpc::ClientContext* context, const ::dist::v1::HeartbeatRequest& request, ::dist::v1::HeartbeatResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::HeartbeatResponse>> AsyncHeartbeat(::grpc::ClientContext* context, const ::dist::v1::HeartbeatRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::HeartbeatResponse>>(AsyncHeartbeatRaw(context, request, cq));
@@ -51,6 +53,7 @@ class RegistryService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::HeartbeatResponse>> PrepareAsyncHeartbeat(::grpc::ClientContext* context, const ::dist::v1::HeartbeatRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dist::v1::HeartbeatResponse>>(PrepareAsyncHeartbeatRaw(context, request, cq));
     }
+    // Watch for changes in the registry
     std::unique_ptr< ::grpc::ClientReaderInterface< ::dist::v1::WatchRegistryResponse>> WatchRegistry(::grpc::ClientContext* context, const ::dist::v1::WatchRegistryRequest& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::dist::v1::WatchRegistryResponse>>(WatchRegistryRaw(context, request));
     }
@@ -63,10 +66,13 @@ class RegistryService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // Register a new computational node
       virtual void Register(::grpc::ClientContext* context, const ::dist::v1::RegisterRequest* request, ::dist::v1::RegisterResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Register(::grpc::ClientContext* context, const ::dist::v1::RegisterRequest* request, ::dist::v1::RegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Send periodic heartbeat to maintain node presence
       virtual void Heartbeat(::grpc::ClientContext* context, const ::dist::v1::HeartbeatRequest* request, ::dist::v1::HeartbeatResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Heartbeat(::grpc::ClientContext* context, const ::dist::v1::HeartbeatRequest* request, ::dist::v1::HeartbeatResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Watch for changes in the registry
       virtual void WatchRegistry(::grpc::ClientContext* context, const ::dist::v1::WatchRegistryRequest* request, ::grpc::ClientReadReactor< ::dist::v1::WatchRegistryResponse>* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
@@ -143,8 +149,11 @@ class RegistryService final {
    public:
     Service();
     virtual ~Service();
+    // Register a new computational node
     virtual ::grpc::Status Register(::grpc::ServerContext* context, const ::dist::v1::RegisterRequest* request, ::dist::v1::RegisterResponse* response);
+    // Send periodic heartbeat to maintain node presence
     virtual ::grpc::Status Heartbeat(::grpc::ServerContext* context, const ::dist::v1::HeartbeatRequest* request, ::dist::v1::HeartbeatResponse* response);
+    // Watch for changes in the registry
     virtual ::grpc::Status WatchRegistry(::grpc::ServerContext* context, const ::dist::v1::WatchRegistryRequest* request, ::grpc::ServerWriter< ::dist::v1::WatchRegistryResponse>* writer);
   };
   template <class BaseClass>
