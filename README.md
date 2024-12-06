@@ -1,6 +1,6 @@
 # Protocol Buffer
 
-## instruction
+## Instruction
 
 ```bash
 # init
